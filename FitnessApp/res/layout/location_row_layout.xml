@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="5dp"
+    android:paddingTop="5dp"
+    android:background="@drawable/location_row_bgs" >
+    
+    <ImageView
+        android:id="@+id/imgMarker"
+        android:layout_width="30dp"
+        android:layout_height="60dp"
+        android:layout_marginRight="5dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/marker" />
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/imgMarker"
+        android:layout_toLeftOf="@+id/imgNextArrow"
+        android:orientation="vertical" >
+        
+        <TextView
+            android:id="@+id/tvFitnessName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="#4d4d4e"
+            android:textStyle="italic|bold"
+            android:text="Fitness terem 1" />
+        
+        <TextView
+            android:id="@+id/tvFitnessAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="#4d4d4e"
+            android:text="Budapest, Rákóczi u. 12" />
+        
+        <TextView
+            android:id="@+id/tvFitnessDistance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="#4d4d4e"
+            android:textStyle="italic"
+            android:lines="1"
+            android:text="4,6 km" />
+        
+    </LinearLayout>
+    
+    <ImageView
+        android:id="@+id/imgNextArrow"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="5dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/arrow" />
+
+</RelativeLayout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="15dp"
+    android:background="@drawable/reg_background"
+    android:orientation="vertical" >
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:orientation="horizontal" >
+        
+        <ImageView 
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/training_image_title" />
+        
+        <TextView 
+	        android:layout_width="match_parent"
+	        android:layout_height="40dp"
+	        android:text="Edzők és időpontok"
+	        android:textSize="22sp"
+	        android:textColor="#fff"
+	        android:textStyle="italic|bold"
+	        android:gravity="center"
+	        android:background="@drawable/lang_choose_title_bg_2" />
+        
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+        
+        <TextView
+            android:id="@+id/tvGymRoomTitle"
+	        android:layout_width="match_parent"
+	        android:layout_height="40dp"
+	        android:text="Savoya Park - Funkcionális terem"
+	        android:textSize="16sp"
+	        android:textColor="#fff"
+	        android:textStyle="italic|bold"
+	        android:gravity="center"
+	        android:background="@drawable/lang_choose_title_bg_2" />
+    
+        <ListView
+	        android:id="@+id/timetableList"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:divider="#ccc"
+	        android:dividerHeight="1dp" />
+        
+    </LinearLayout>
+
+</LinearLayout>

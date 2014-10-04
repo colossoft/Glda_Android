@@ -1,0 +1,8 @@
+INDEX VERSION 1.126+C:\Users\Ákos\Glda_Android\.metadata\.plugins\org.eclipse.jdt.core
+1949087410.index
+2600212215.index
+3515282563.index
+410514044.index
+557611143.index
+903483412.index
+848856923.index

@@ -1,0 +1,50 @@
+<resources>
+
+    <!--
+        Base application theme for API 11+. This theme completely replaces
+        AppBaseTheme from res/values/styles.xml on API 11+ devices.
+    -->
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- API 11 theme customizations can go here. -->
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+
+        <!-- Support library compatibility -->
+        <item name="actionBarStyle">@style/MyActionBar</item>
+    </style>
+    
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+    
+    <style name="NoBackground" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:windowBackground">@null</item>
+    </style>
+    
+    <!-- <style name="CustomActionBarTheme"
+           parent="@style/AppBaseTheme">
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+
+        Support library compatibility
+        <item name="actionBarStyle">@style/MyActionBar</item>
+    </style> -->
+
+    <!-- ActionBar styles -->
+    <style name="MyActionBar"
+           parent="@style/Widget.AppCompat.ActionBar">
+        <item name="android:titleTextStyle">@style/MyActionBarTitleText</item>
+
+        <!-- Support library compatibility -->
+        <item name="titleTextStyle">@style/MyActionBarTitleText</item>
+    </style>
+
+    <!-- ActionBar title text -->
+    <style name="MyActionBarTitleText"
+           parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textStyle">italic|bold</item>
+        <item name="android:textSize">22sp</item>
+        <!-- The textColor property is backward compatible with the Support Library -->
+    </style>
+
+</resources>

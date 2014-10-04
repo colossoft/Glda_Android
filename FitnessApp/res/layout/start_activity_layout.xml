@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp"
+    android:background="@drawable/start_background" >
+    
+    <ImageView 
+        android:id="@+id/imgAppLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:paddingRight="30dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/start_logo" />
+    
+	<LinearLayout
+	    android:id="@+id/linlayButtons"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginRight="30dp"
+	    android:layout_marginLeft="30dp"
+	    android:orientation="vertical"
+	    android:layout_marginBottom="15dp"
+	    android:layout_alignParentBottom="true"
+	    android:gravity="center" >
+	    
+	    <Button 
+	        android:id="@+id/btnSignUp"
+	        android:layout_width="match_parent"
+	        android:layout_height="40dp"
+	        android:paddingLeft="50dp"
+	        android:layout_marginBottom="10dp"
+	        android:background="@drawable/btn_reg_bgs"
+	        android:text="Regisztráció"
+	        android:textStyle="italic|bold"
+	        android:textColor="#fff"
+	        android:textSize="24sp" />
+	    
+	    <Button 
+	        android:id="@+id/btnLogin"
+	        android:layout_width="match_parent"
+	        android:layout_height="40dp"
+	        android:paddingLeft="50dp"
+	        android:layout_marginBottom="40dp"
+	        android:background="@drawable/bnt_login_bgs"
+	        android:text="Belépés"
+	        android:textStyle="italic|bold"
+	        android:textSize="24sp"
+	        android:textColor="#fff" />
+	    
+	    <Button
+		    android:id="@+id/btnLanguagePicker"
+		    android:layout_width="match_parent"
+		    android:layout_height="40dp"
+	        android:paddingLeft="50dp"
+		    android:background="@drawable/btn_lang_bgs"
+		    android:text="Nyelvválasztás"
+		    android:textStyle="italic|bold"
+	        android:textSize="24sp"
+		    android:textColor="#cc3433" />
+	    
+	</LinearLayout>
+    
+</RelativeLayout>

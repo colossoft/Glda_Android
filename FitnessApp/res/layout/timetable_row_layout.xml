@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linlayTimetableRow"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    android:orientation="vertical"
+    android:background="@drawable/location_row_bgs" >
+
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="3dp"
+        android:background="@drawable/reservation_row_up_color" >
+        
+        <TextView
+            android:id="@+id/tvReservationTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10:30 - 12:00"
+            android:textColor="#fff"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  |  Szabad helyek: "
+            android:textColor="#fff"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+        
+        <TextView
+            android:id="@+id/tvReservationFreeSpots"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12"
+            android:textColor="#fff"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+        
+    </LinearLayout>
+    
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="3dp" >
+        
+        <TextView
+            android:id="@+id/tvReservationTrainerName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/tvVonal"
+            android:text="Dugonics Eszter Magdolna"
+            android:textColor="#4d4d4e"
+            android:textSize="20sp"
+            android:textStyle="italic|bold" />
+        
+        <TextView
+            android:id="@+id/tvReservationTrainingName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/tvVonal"
+            android:layout_below="@id/tvReservationTrainerName"
+            android:text="Alakformáló"
+            android:textSize="16sp"
+            android:textColor="#ce3334"
+            android:textStyle="italic|bold" />
+        
+        <View
+            android:id="@+id/tvVonal"
+            android:layout_width="1dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/tvFoglalas"
+            android:background="#505252" />
+        
+        <TextView
+            android:id="@+id/tvFoglalas" 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/imgIsReserved"
+            android:layout_centerVertical="true"
+            android:textColor="#ce3334"
+            android:textSize="16sp"
+            android:textStyle="italic|bold"
+            android:text="Foglalás:" />
+        
+        <ImageView 
+	        android:id="@+id/imgIsReserved"
+	        android:layout_width="40dp"
+	        android:layout_height="40dp"
+	        android:layout_alignParentRight="true"
+	        android:layout_centerVertical="true"
+	        android:src="@drawable/checkbox_off" />
+        
+    </RelativeLayout>
+
+</LinearLayout>

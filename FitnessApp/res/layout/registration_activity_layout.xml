@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp"
+    android:background="@drawable/reg_background" >
+    
+	<ImageView 
+        android:id="@+id/imgAppLogo"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
+        android:paddingRight="30dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/start_logo" />
+	
+	<LinearLayout
+	    android:id="@+id/linlayForm"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginRight="20dp"
+	    android:layout_marginLeft="20dp"
+	    android:orientation="vertical"
+	    android:layout_above="@+id/linlayButtons"
+	    android:background="#fff" >
+    
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="horizontal" >
+	        
+	        <ImageView 
+	            android:layout_width="50dp"
+	            android:layout_height="40dp"
+	            android:adjustViewBounds="true"
+	            android:scaleType="fitXY"
+	            android:src="@drawable/reg_image_title" />
+	        
+	        <TextView 
+		        android:layout_width="match_parent"
+		        android:layout_height="40dp"
+		        android:text="Regisztráció"
+		        android:textSize="22sp"
+		        android:textColor="#fff"
+		        android:textStyle="italic|bold"
+		        android:gravity="center"
+		        android:background="@drawable/lang_choose_title_bg_2" />
+	        
+	    </LinearLayout>
+	    
+	    <EditText
+	        android:id="@+id/edFirstName"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="5dp"
+	        android:layout_marginLeft="5dp"
+	        android:layout_marginRight="5dp"
+	        android:inputType="textPersonName"
+	        android:background="@null"
+	        android:padding="5dp"
+	        android:textColor="#4d4d4e"
+	        android:hint="Keresztnév" />
+	    
+	    <TextView 
+	        android:layout_width="match_parent"
+	        android:layout_height="1dp"
+	        android:layout_marginLeft="10dp"
+	        android:layout_marginRight="10dp"
+	        android:background="#ccc" />
+	    
+	    <EditText
+	        android:id="@+id/edLastName"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="5dp"
+	        android:layout_marginLeft="5dp"
+	        android:layout_marginRight="5dp"
+	        android:inputType="textPersonName"
+	        android:background="@null"
+	        android:padding="5dp"
+	        android:textColor="#4d4d4e"
+	        android:hint="Vezetéknév" />
+	    
+	    <TextView 
+	        android:layout_width="match_parent"
+	        android:layout_height="1dp"
+	        android:layout_marginLeft="10dp"
+	        android:layout_marginRight="10dp"
+	        android:background="#ccc" />
+	    
+	    <EditText
+	        android:id="@+id/edEmail"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="5dp"
+	        android:layout_marginLeft="5dp"
+	        android:layout_marginRight="5dp"
+	        android:inputType="textEmailAddress"
+	        android:background="@null"
+	        android:padding="5dp"
+	        android:textColor="#4d4d4e"
+	        android:hint="E-mail cím" />
+	    
+	    <TextView 
+	        android:layout_width="match_parent"
+	        android:layout_height="1dp"
+	        android:layout_marginLeft="10dp"
+	        android:layout_marginRight="10dp"
+	        android:background="#ccc" />
+	    
+	    <EditText
+	        android:id="@+id/edPassword"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="5dp"
+	        android:layout_marginLeft="5dp"
+	        android:layout_marginRight="5dp"
+	        android:inputType="textPassword"
+	        android:background="@null"
+	        android:padding="5dp"
+	        android:textColor="#4d4d4e"
+	        android:hint="Jelszó" />
+	    
+	    <TextView 
+	        android:layout_width="match_parent"
+	        android:layout_height="1dp"
+	        android:layout_marginLeft="10dp"
+	        android:layout_marginRight="10dp"
+	        android:background="#ccc" />
+	    
+	    <EditText
+	        android:id="@+id/edPasswordAgain"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="5dp"
+	        android:layout_marginLeft="5dp"
+	        android:layout_marginRight="5dp"
+	        android:inputType="textPassword"
+	        android:background="@null"
+	        android:padding="5dp"
+	        android:textColor="#4d4d4e"
+	        android:hint="Jelszó újra" />
+	    
+	    <TextView 
+	        android:layout_width="match_parent"
+	        android:layout_height="1dp"
+	        android:layout_marginLeft="10dp"
+	        android:layout_marginRight="10dp"
+	        android:layout_marginBottom="5dp"
+	        android:background="#ccc" />
+	    
+	</LinearLayout>
+
+	<LinearLayout
+	    android:id="@+id/linlayButtons"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginTop="20dp"
+	    android:layout_marginRight="20dp"
+	    android:layout_marginLeft="20dp"
+	    android:layout_marginBottom="20dp"
+	    android:layout_alignParentBottom="true"
+	    android:gravity="center_horizontal"
+	    android:orientation="horizontal" >
+	    
+	    <Button 
+	        android:id="@+id/btnCancel"
+	        android:layout_width="100dp"
+	        android:layout_height="45dp"
+	        android:layout_marginRight="20dp"
+	        android:background="@drawable/reg_cancel_bgs"
+	        android:textSize="22sp"
+	        android:textColor="#fff"
+	        android:textStyle="italic|bold"
+	        android:text="Mégse" />
+	    
+	    <Button 
+	        android:id="@+id/btnSignUp"
+	        android:layout_width="wrap_content"
+	        android:layout_height="45dp"
+	        android:background="@drawable/reg_ok_bgs"
+	        android:textSize="22sp"
+	        android:textColor="#fff"
+	        android:textStyle="italic|bold"
+	        android:text="Regisztrálok" />
+	    
+	</LinearLayout>
+    
+</RelativeLayout>

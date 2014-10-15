@@ -3,5 +3,8 @@
 
     <string name="app_name">Gilda Max</string>
     <string name="action_settings">Settings</string>
+    <string name="pref_title">Időzítés</string>
+    <string name="pref_summary">Állítsa be, hogy az edzés kezdete előtt hány órával értesíse az alkalmazás</string>
+    <string name="pref_default">2</string>
 
 </resources>

@@ -17,10 +17,12 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.DialogInterface.OnClickListener;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -126,7 +128,9 @@ public class LocationsActivity extends ActionBarActivity {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 				LatLng pos = new LatLng(fitnessLocations.get(position).getLatitude(), fitnessLocations.get(position).getLongitude());
-				googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(pos, 16));
+				if(googleMap != null) {
+					googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(pos, 16));
+				}
 			}
 		});
 		
@@ -161,9 +165,11 @@ public class LocationsActivity extends ActionBarActivity {
             e.printStackTrace();
         }
 		
-		googleMap.setMyLocationEnabled(true);
-		googleMap.getUiSettings().setZoomControlsEnabled(false);
-		googleMap.setInfoWindowAdapter(new MyInfoWindowAdapter());
+		if(googleMap != null) {
+			googleMap.setMyLocationEnabled(true);
+			googleMap.getUiSettings().setZoomControlsEnabled(false);
+			googleMap.setInfoWindowAdapter(new MyInfoWindowAdapter());
+		}
 		
 		// Helyszínek letöltése
 		pDialog.setMessage("Helyszínek letöltése...");
@@ -238,6 +244,9 @@ public class LocationsActivity extends ActionBarActivity {
 			case R.id.action_logout:
 				logoutUser();
 				return true;
+			case R.id.action_setting:
+				setting();
+				return true;
 	
 			default:
 				return super.onOptionsItemSelected(item);
@@ -279,6 +288,11 @@ public class LocationsActivity extends ActionBarActivity {
 		}).show();
 	}
 	
+	private void setting(){
+		Intent settingIntetn = new Intent(LocationsActivity.this, SettingActivity.class);		
+		startActivity(settingIntetn);
+	}
+	
 	private void initializeMap() {
 		if(googleMap == null) {
 			googleMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.mapFragment)).getMap();
@@ -311,23 +325,27 @@ public class LocationsActivity extends ActionBarActivity {
 		
 		for (FitnessLocation loc : fitnessLocations) {
 			LatLng pos = new LatLng(loc.getLatitude(), loc.getLongitude());
-			googleMap.addMarker(new MarkerOptions()
-									.position(pos)
-									.title(loc.getName())
-									.icon(BitmapDescriptorFactory.fromResource(R.drawable.marker)));
+			if(googleMap != null) {
+				googleMap.addMarker(new MarkerOptions()
+										.position(pos)
+										.title(loc.getName())
+										.icon(BitmapDescriptorFactory.fromResource(R.drawable.marker)));
+			}
 			
 			bounds.include(pos);
 		}
 		
 		//googleMap.moveCamera(CameraUpdateFactory.newLatLngBounds(bounds.build(), 0));
-		googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(bounds.build().getCenter(), 8));
+		if(googleMap != null) {
+			googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(bounds.build().getCenter(), 8));
+		}
 	}
 	
 	class MyInfoWindowAdapter implements InfoWindowAdapter {
 
 		private final View myInfoWindowView;
 		
-		public MyInfoWindowAdapter() {
+		@SuppressLint("InflateParams") public MyInfoWindowAdapter() {
 			myInfoWindowView = getLayoutInflater().inflate(R.layout.infowindow_layout, null);
 		}
 		

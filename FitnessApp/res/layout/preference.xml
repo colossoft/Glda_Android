@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+      <ListPreference
+        android:id="@+id/pref_timed"
+        android:title="@string/pref_title"
+        android:summary="@string/pref_summary"
+        android:persistent="false"
+        android:entries="@array/prefValues"
+        android:entryValues="@array/prefValues"
+        android:defaultValue="@string/pref_default">
+
+        </ListPreference>
+
+</PreferenceScreen>

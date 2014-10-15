@@ -15,6 +15,8 @@
         android:textColor="#000"
         android:id="@+id/tvActionbarTitle"
         android:textSize="22sp"
-        android:textStyle="italic|bold" />
+        android:textStyle="italic|bold" /> 
+
+
 
 </LinearLayout>

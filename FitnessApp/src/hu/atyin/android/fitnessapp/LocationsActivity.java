@@ -24,10 +24,12 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.DialogInterface.OnClickListener;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.location.Location;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
@@ -78,6 +80,8 @@ public class LocationsActivity extends ActionBarActivity {
 	private HashMap<String, String> userDetails;
 	
 	private CustomJsonRequest locationsJsonObjReq;
+	
+    private static final int RESULT_SETTINGS = 1;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -289,8 +293,35 @@ public class LocationsActivity extends ActionBarActivity {
 	}
 	
 	private void setting(){
-		Intent settingIntetn = new Intent(LocationsActivity.this, SettingActivity.class);		
-		startActivity(settingIntetn);
+		Intent settingIntetn = new Intent(getApplicationContext(), SettingActivity.class);		
+		//startActivity(settingIntetn);
+		startActivityForResult(settingIntetn, RESULT_SETTINGS);
+	}
+	
+	@Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+ 
+        switch (requestCode) {
+        case RESULT_SETTINGS:
+            showSettingResult();
+            break;
+ 
+        }
+ 
+    }
+	
+	private void showSettingResult() {
+        SharedPreferences sharedPrefs = PreferenceManager
+                .getDefaultSharedPreferences(this);
+ 
+        StringBuilder builder = new StringBuilder();
+ 
+        builder.append("\n Timer: "
+                + sharedPrefs.getString("pref_key", "NULL"));
+        
+        //Toast.makeText(LocationsActivity.this, builder.toString(), Toast.LENGTH_SHORT).show();
+        Log.d("FITNESS", builder.toString());
 	}
 	
 	private void initializeMap() {

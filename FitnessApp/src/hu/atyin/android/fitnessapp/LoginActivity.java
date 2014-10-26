@@ -68,6 +68,9 @@ public class LoginActivity extends Activity {
 				final String email = edEmail.getText().toString();
 				final String password = edPassword.getText().toString();
 				
+				Log.d("FITNESS", email);
+				Log.d("FITNESS", password);
+				
 				if(email.trim().length() == 0) {
 					new AlertDialog.Builder(LoginActivity.this).setTitle("Bejelentkezés").setMessage("Add meg az e-mail címet!").setNeutralButton("OK", null).show();
 				}

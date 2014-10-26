@@ -96,6 +96,8 @@
 		    android:name="com.google.android.maps.v2.API_KEY"
 		    android:value="AIzaSyDLqDafqQx9vJlozXaeS039mfXBM-hBD8c"/>
         
+        <receiver android:name="hu.atyin.android.fitnessapp.volley.AlarmNotificationReceiver"></receiver>
+        
     </application>
 
 </manifest>

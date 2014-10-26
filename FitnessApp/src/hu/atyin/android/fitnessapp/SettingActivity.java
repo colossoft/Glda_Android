@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
-import android.util.Log;
 
 public class SettingActivity extends PreferenceActivity {
 	
@@ -41,6 +40,7 @@ public class SettingActivity extends PreferenceActivity {
 		};
 	}	
 	
+	@SuppressWarnings("deprecation")
 	@Override
 	protected void onResume() {
 	    super.onResume();
@@ -48,6 +48,7 @@ public class SettingActivity extends PreferenceActivity {
 	            .registerOnSharedPreferenceChangeListener(listener);
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	protected void onPause() {
 	    super.onPause();

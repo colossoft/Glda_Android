@@ -32,7 +32,7 @@
 	        android:paddingLeft="50dp"
 	        android:layout_marginBottom="10dp"
 	        android:background="@drawable/btn_reg_bgs"
-	        android:text="Regisztráció"
+	        android:text="@string/app_login_registrationLabel"
 	        android:textStyle="italic|bold"
 	        android:textColor="#fff"
 	        android:textSize="24sp" />
@@ -44,7 +44,7 @@
 	        android:paddingLeft="50dp"
 	        android:layout_marginBottom="40dp"
 	        android:background="@drawable/bnt_login_bgs"
-	        android:text="Belépés"
+	        android:text="@string/app_login_entryBtnText"
 	        android:textStyle="italic|bold"
 	        android:textSize="24sp"
 	        android:textColor="#fff" />
@@ -55,7 +55,7 @@
 		    android:layout_height="40dp"
 	        android:paddingLeft="50dp"
 		    android:background="@drawable/btn_lang_bgs"
-		    android:text="Nyelvválasztás"
+		    android:text="@string/app_login_languagechooserBtnText"
 		    android:textStyle="italic|bold"
 	        android:textSize="24sp"
 		    android:textColor="#cc3433" />

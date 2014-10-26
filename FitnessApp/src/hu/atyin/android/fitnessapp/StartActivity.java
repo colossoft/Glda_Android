@@ -1,8 +1,11 @@
 package hu.atyin.android.fitnessapp;
 
+import java.util.Locale;
+
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -20,6 +23,16 @@ public class StartActivity extends Activity {
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+        
+		//Lekérjük a nyelvet és ha már be van állítva, akkor azt lökjük vissza, ha nincs, akkor a magyart
+		SharedPreferences prefs = getSharedPreferences("CommonPrefs", Activity.MODE_PRIVATE);
+		String settedValue = prefs.getString("Language", "NULL");
+	    
+		if(prefs == null || settedValue == "hu")
+	    	ChangeLang("hu");
+	    else
+	    	ChangeLang(settedValue);
+		
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.start_activity_layout);
@@ -45,21 +58,27 @@ public class StartActivity extends Activity {
 				btnLangChooseHun.setOnClickListener(new OnClickListener() {
 					@Override
 					public void onClick(View v) {
-						langDialog.dismiss();
+						ChangeLang("hu");						
+		                langDialog.dismiss();
+		        	    RefreshStartActivity();
 					}
 				});
 				
 				btnLangChooseEng.setOnClickListener(new OnClickListener() {
 					@Override
 					public void onClick(View v) {
+						ChangeLang("en");						
 						langDialog.dismiss();
+					    RefreshStartActivity();
 					}
 				});
 				
 				btnLangChooseDe.setOnClickListener(new OnClickListener() {
 					@Override
 					public void onClick(View v) {
+						ChangeLang("de");						
 						langDialog.dismiss();
+					    RefreshStartActivity();
 					}
 				});
 				
@@ -88,4 +107,32 @@ public class StartActivity extends Activity {
 		});
 	}
 	
+	//Nyelvválasztás
+	private void ChangeLang(String lang)
+	{
+	    if (lang.equalsIgnoreCase(""))
+	     return;
+	    Locale myLocale = new Locale(lang);
+	    SaveLocale(lang);
+	    Locale.setDefault(myLocale);
+	    android.content.res.Configuration config = new android.content.res.Configuration();
+	    config.locale = myLocale;
+	    getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+	}
+	
+	//Kiválasztott nyelv tárolása
+	private void SaveLocale(String lang)
+	{
+	    String langPref = "Language";
+	    SharedPreferences prefs = getSharedPreferences("CommonPrefs", Activity.MODE_PRIVATE);
+	    SharedPreferences.Editor editor = prefs.edit();
+	    editor.putString(langPref, lang);
+	    editor.commit();
+	}
+	
+	//Újraindítjuk a Start Activity-t, hogy annak a nyelvezete is befrissüljön
+	public void RefreshStartActivity() {
+		this.finish();
+		this.startActivity(getIntent());
+	}
 }

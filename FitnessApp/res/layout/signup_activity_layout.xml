@@ -40,7 +40,7 @@
 	        <TextView 
 		        android:layout_width="match_parent"
 		        android:layout_height="40dp"
-		        android:text="Regisztráció"
+		        android:text="@string/app_login_registrationLabel"
 		        android:textSize="22sp"
 		        android:textColor="#fff"
 		        android:textStyle="italic|bold"
@@ -60,7 +60,7 @@
 	        android:background="@null"
 	        android:padding="5dp"
 	        android:textColor="#4d4d4e"
-	        android:hint="Keresztnév" />
+	        android:hint="@string/app_registration_lastname" />
 	    
 	    <TextView 
 	        android:layout_width="match_parent"
@@ -80,7 +80,7 @@
 	        android:background="@null"
 	        android:padding="5dp"
 	        android:textColor="#4d4d4e"
-	        android:hint="Vezetéknév" />
+	        android:hint="@string/app_registration_firstname" />
 	    
 	    <TextView 
 	        android:layout_width="match_parent"
@@ -100,7 +100,7 @@
 	        android:background="@null"
 	        android:padding="5dp"
 	        android:textColor="#4d4d4e"
-	        android:hint="E-mail cím" />
+	        android:hint="@string/app_login_emailBtnText" />
 	    
 	    <TextView 
 	        android:layout_width="match_parent"
@@ -120,7 +120,7 @@
 	        android:background="@null"
 	        android:padding="5dp"
 	        android:textColor="#4d4d4e"
-	        android:hint="Jelszó" />
+	        android:hint="@string/app_login_passwordLabel" />
 	    
 	    <TextView 
 	        android:layout_width="match_parent"
@@ -140,7 +140,7 @@
 	        android:background="@null"
 	        android:padding="5dp"
 	        android:textColor="#4d4d4e"
-	        android:hint="Jelszó újra" />
+	        android:hint="@string/app_registration_passwordagain" />
 	    
 	    <TextView 
 	        android:layout_width="match_parent"
@@ -172,7 +172,7 @@
 	        android:textSize="22sp"
 	        android:textColor="#fff"
 	        android:textStyle="italic|bold"
-	        android:text="Mégse" />
+	        android:text="@string/app_login_cancalBtnText" />
 	    
 	    <Button 
 	        android:id="@+id/btnSignUp"
@@ -182,7 +182,7 @@
 	        android:textSize="22sp"
 	        android:textColor="#fff"
 	        android:textStyle="italic|bold"
-	        android:text="Regisztrálok" />
+	        android:text="@string/app_login_registrationLabel" />
 	    
 	</LinearLayout>
     

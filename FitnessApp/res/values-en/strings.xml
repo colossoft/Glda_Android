@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Gilda Max</string>
+    <string name="action_settings">Settings</string>
+    <string name="pref_title">Időzítés</string>
+    <string name="pref_summary">Állítsa be, hogy az edzés kezdete előtt hány órával értesíse az alkalmazás</string>
+    <string name="pref_default">2</string>    
+    
+    <string name="app_setting_title">Settings</string>
+	<string name="app_login_login">Login</string>
+	<string name="app_login_cancalBtnText">Cancel</string>
+	<string name="app_login_emailBtnText">E-mail address</string>
+	
+    <string name="app_login_passwordLabel">Password</string>    
+    <string name="app_login_loginBtnText">Log in</string>    
+    <string name="app_login_registrationLabel">Registration</string>    
+    <string name="app_login_entryBtnText">Entry</string>    
+    <string name="app_login_languagechooserBtnText">Choose Language</string>
+       
+    <string name="app_language_title">Choose a language!</string>
+    <string name="app_language_hun">Hungarien</string>
+    <string name="app_language_eng">English</string>
+    <string name="app_language_deu">German</string>
+    
+    <string name="app_registration_lastname">First name</string>
+    <string name="app_registration_firstname">Last name</string>
+    <string name="app_registration_passwordagain">Password again</string>
+</resources>

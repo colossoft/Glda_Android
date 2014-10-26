@@ -5,11 +5,13 @@ import hu.atyin.android.fitnessapp.model.FitnessLocation;
 import hu.atyin.android.fitnessapp.model.MyLocation;
 import hu.atyin.android.fitnessapp.model.MyLocation.LocationResult;
 import hu.atyin.android.fitnessapp.session.SessionManager;
+import hu.atyin.android.fitnessapp.volley.AlarmNotificationReceiver;
 import hu.atyin.android.fitnessapp.volley.AppController;
 import hu.atyin.android.fitnessapp.volley.CustomJsonRequest;
 import hu.atyin.android.fitnessapp.volley.UrlCollection;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -18,7 +20,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.annotation.SuppressLint;
+import android.app.AlarmManager;
 import android.app.AlertDialog;
+import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -28,6 +32,7 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.location.Location;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBar;
@@ -322,6 +327,24 @@ public class LocationsActivity extends ActionBarActivity {
         
         //Toast.makeText(LocationsActivity.this, builder.toString(), Toast.LENGTH_SHORT).show();
         Log.d("FITNESS", builder.toString());
+        
+        Calendar calendar = Calendar.getInstance();
+        
+        //calendar.set(Calendar.MONTH, 10);
+        //calendar.set(Calendar.YEAR, 2014);
+        //calendar.set(Calendar.DAY_OF_MONTH, 25);
+   
+        //calendar.set(Calendar.HOUR_OF_DAY, 13);
+        //calendar.set(Calendar.MINUTE, 29);
+        
+        calendar.add(Calendar.MINUTE, 1);
+        
+        AlarmManager alarmManager = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
+        Intent intent = new Intent(this, AlarmNotificationReceiver.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_ONE_SHOT);
+        alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + (10 * 1000), pendingIntent);
 	}
 	
 	private void initializeMap() {

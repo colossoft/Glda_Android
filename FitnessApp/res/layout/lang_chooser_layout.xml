@@ -22,7 +22,7 @@
         <TextView 
 	        android:layout_width="match_parent"
 	        android:layout_height="40dp"
-	        android:text="Válassz egy nyelvet!"
+	        android:text="@string/app_language_title"
 	        android:textSize="20sp"
 	        android:textColor="#fff"
 	        android:textStyle="italic|bold"
@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:padding="5dp"
-            android:text="Magyar"
+            android:text="@string/app_language_hun"
             android:textSize="22sp"
             android:textColor="#4d4d4e"
             android:textStyle="italic|bold" />
@@ -78,7 +78,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:padding="5dp"
-            android:text="Angol"
+            android:text="@string/app_language_eng"
             android:textSize="22sp"
             android:textColor="#4d4d4e"
             android:textStyle="italic|bold" />
@@ -112,7 +112,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:padding="5dp"
-            android:text="Német"
+            android:text="@string/app_language_deu"
             android:textSize="22sp"
             android:textColor="#4d4d4e"
             android:textStyle="italic|bold" />

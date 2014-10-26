@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <PreferenceCategory android:title="Az Alkalmazás beállításai">
+    <PreferenceCategory android:title="@string/app_setting_title">
       <ListPreference
         android:key="pref_key"
         android:title="@string/pref_title"

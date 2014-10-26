@@ -1088,6 +1088,8 @@ containing a value of this type.
          (such as screen margins) for screens with more than 820dp of available width. This
          would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively).
     
+ Default screen margins, per the Android Design guidelines. 
+ Default screen margins, per the Android Design guidelines. 
          */
         public static final int activity_horizontal_margin=0x7f080015;
         public static final int activity_vertical_margin=0x7f080016;
@@ -1507,7 +1509,23 @@ containing a value of this type.
          */
         public static final int abc_shareactionprovider_share_with_application=0x7f0a000b;
         public static final int action_settings=0x7f0a0027;
+        public static final int app_language_deu=0x7f0a0037;
+        public static final int app_language_eng=0x7f0a0036;
+        public static final int app_language_hun=0x7f0a0035;
+        public static final int app_language_title=0x7f0a0034;
+        public static final int app_login_cancalBtnText=0x7f0a002d;
+        public static final int app_login_emailBtnText=0x7f0a002e;
+        public static final int app_login_entryBtnText=0x7f0a0032;
+        public static final int app_login_languagechooserBtnText=0x7f0a0033;
+        public static final int app_login_login=0x7f0a002c;
+        public static final int app_login_loginBtnText=0x7f0a0030;
+        public static final int app_login_passwordLabel=0x7f0a002f;
+        public static final int app_login_registrationLabel=0x7f0a0031;
         public static final int app_name=0x7f0a0026;
+        public static final int app_registration_firstname=0x7f0a0039;
+        public static final int app_registration_lastname=0x7f0a0038;
+        public static final int app_registration_passwordagain=0x7f0a003a;
+        public static final int app_setting_title=0x7f0a002b;
         /**   Title for notification shown when GooglePlayServices needs to be
         enabled for a application to work. [CHAR LIMIT=70] 
          */
@@ -1616,9 +1634,21 @@ containing a value of this type.
         AppBaseTheme from BOTH res/values/styles.xml and
         res/values-v11/styles.xml on API 14+ devices.
     
+
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    
+
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    
          */
         public static final int AppBaseTheme=0x7f0b008b;
         /**  Application theme. 
+ All customizations that are NOT specific to a particular API-level can go here. 
+ Application theme. 
+ All customizations that are NOT specific to a particular API-level can go here. 
+ Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
@@ -1649,9 +1679,27 @@ containing a value of this type.
         <item name="actionBarStyle">@style/MyActionBar</item>
     </style> 
  ActionBar styles 
+ <style name="CustomActionBarTheme"
+           parent="@style/AppBaseTheme">
+
+        Support library compatibility
+        <item name="actionBarStyle">@style/MyActionBar</item>
+    </style> 
+ ActionBar styles 
+ <style name="CustomActionBarTheme"
+           parent="@style/AppBaseTheme">
+
+        Support library compatibility
+        <item name="actionBarStyle">@style/MyActionBar</item>
+    </style> 
+ ActionBar styles 
          */
         public static final int MyActionBar=0x7f0b008e;
         /**  ActionBar title text 
+ The textColor property is backward compatible with the Support Library 
+ ActionBar title text 
+ The textColor property is backward compatible with the Support Library 
+ ActionBar title text 
  The textColor property is backward compatible with the Support Library 
  ActionBar title text 
  The textColor property is backward compatible with the Support Library 

@@ -501,6 +501,7 @@ int string app_language_deu 0x7f0a0037
 int string app_language_eng 0x7f0a0036
 int string app_language_hun 0x7f0a0035
 int string app_language_title 0x7f0a0034
+int string app_location_locationtitle 0x7f0a003b
 int string app_login_cancalBtnText 0x7f0a002d
 int string app_login_emailBtnText 0x7f0a002e
 int string app_login_entryBtnText 0x7f0a0032

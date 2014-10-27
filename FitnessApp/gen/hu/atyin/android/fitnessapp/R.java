@@ -1513,6 +1513,7 @@ containing a value of this type.
         public static final int app_language_eng=0x7f0a0036;
         public static final int app_language_hun=0x7f0a0035;
         public static final int app_language_title=0x7f0a0034;
+        public static final int app_location_locationtitle=0x7f0a003b;
         public static final int app_login_cancalBtnText=0x7f0a002d;
         public static final int app_login_emailBtnText=0x7f0a002e;
         public static final int app_login_entryBtnText=0x7f0a0032;

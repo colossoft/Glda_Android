@@ -12,6 +12,7 @@
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 	<uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+	<uses-permission android:name="android.permission.VIBRATE"/>
 	<!-- The following two permissions are not required to use
 	     Google Maps Android API v2, but are recommended. -->
 	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
@@ -96,7 +97,9 @@
 		    android:name="com.google.android.maps.v2.API_KEY"
 		    android:value="AIzaSyDLqDafqQx9vJlozXaeS039mfXBM-hBD8c"/>
         
-        <receiver android:name="hu.atyin.android.fitnessapp.volley.AlarmNotificationReceiver"></receiver>
+        <receiver 
+            android:name="hu.atyin.android.fitnessapp.volley.AlarmNotificationReceiver"
+            android:enabled="true"></receiver>
         
     </application>
 

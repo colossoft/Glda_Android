@@ -25,5 +25,7 @@
     <string name="app_registration_lastname">Keresztnév</string>
     <string name="app_registration_firstname">Vezetéknév</string>
     <string name="app_registration_passwordagain">Jelszó újra</string>
+    
+    <string name="app_location_locationtitle">Válassz helyszínt</string>
 
 </resources>

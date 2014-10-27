@@ -26,7 +26,7 @@
 	        android:layout_width="match_parent"
 	        android:layout_height="40dp"
 	        android:background="@drawable/lang_choose_title_bg_2"
-	        android:text="Válassz helyszínt"
+	        android:text="@string/app_location_locationtitle"
 	        android:gravity="center"
 	        android:textColor="#fff"
 	        android:textStyle="italic|bold"

@@ -26,4 +26,6 @@
     <string name="app_registration_lastname">First name</string>
     <string name="app_registration_firstname">Last name</string>
     <string name="app_registration_passwordagain">Password again</string>
+    
+    <string name="app_location_locationtitle">Choose Location</string>
 </resources>

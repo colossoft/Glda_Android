@@ -26,4 +26,6 @@
     <string name="app_registration_lastname">Vorname</string>
     <string name="app_registration_firstname">Zuname</string>
     <string name="app_registration_passwordagain">Passwort wiederholen</string>
+    
+    <string name="app_location_locationtitle">Wählen Sie Ihren Standort</string>
 </resources>

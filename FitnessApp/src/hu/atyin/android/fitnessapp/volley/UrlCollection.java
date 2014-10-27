@@ -2,8 +2,8 @@ package hu.atyin.android.fitnessapp.volley;
 
 public class UrlCollection {
 
-	//public static final String MAIN_URL = "http://gildamax.atyin.url.ph/v1";
-	public static final String MAIN_URL = "http://10.0.2.2:8080/Glda_app/BackEnd/v1";
+	public static final String MAIN_URL = "http://gildamax.atyin.url.ph/v1";
+	//public static final String MAIN_URL = "http://10.0.2.2:8080/Glda_app/BackEnd/v1";
 	
 	public static final String LOGIN_URL = MAIN_URL + "/login";
 	public static final String REGISTER_URL = MAIN_URL + "/register";

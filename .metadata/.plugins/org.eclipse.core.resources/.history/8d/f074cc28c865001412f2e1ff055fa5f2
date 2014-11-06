@@ -1,0 +1,53 @@
+package hu.atyin.android.fitnessapp;
+
+import hu.atyin.android.fitnessapp.session.SessionManager;
+import android.app.Activity;
+import android.app.ProgressDialog;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.Window;
+import android.widget.Button;
+import android.widget.EditText;
+
+public class ForgotPasswordActivity extends Activity {
+
+	private EditText edEmail;
+	private Button btnCancel;
+	private Button btnSend;
+	
+	SessionManager session;
+	
+	String tag_forgot_password_json_obj = "forgot_password_json_obj_req";
+	
+	ProgressDialog pDialog;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		setContentView(R.layout.forgot_password_activity_layout);
+		
+		session = new SessionManager(ForgotPasswordActivity.this);
+		
+		// View referenciák elkérése
+		edEmail = (EditText) findViewById(R.id.edEmail);
+		btnCancel = (Button) findViewById(R.id.btnCancel);
+		btnSend = (Button) findViewById(R.id.btnSend);
+		
+		btnCancel.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				finish();
+			}
+		});
+		
+		btnSend.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				
+			}
+		});
+	}
+	
+}

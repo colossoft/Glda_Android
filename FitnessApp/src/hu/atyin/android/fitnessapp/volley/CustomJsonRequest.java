@@ -13,6 +13,7 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.Response.ErrorListener;
 import com.android.volley.Response.Listener;
+import com.android.volley.VolleyError;
 import com.android.volley.toolbox.HttpHeaderParser;
 
 public class CustomJsonRequest extends Request<JSONObject> {
@@ -58,7 +59,28 @@ public class CustomJsonRequest extends Request<JSONObject> {
             return Response.error(new ParseError(je));
         }
     }
-
+    
+    @Override
+    protected VolleyError parseNetworkError(VolleyError volleyError) {
+    	try {
+			if(volleyError.networkResponse != null && volleyError.networkResponse.data != null) {
+				String jsonString = new String(volleyError.networkResponse.data, 
+						HttpHeaderParser.parseCharset(volleyError.networkResponse.headers));
+				JSONObject jsonObj = new JSONObject(jsonString);
+				String errMessage = jsonObj.getString("message");
+				
+                VolleyError error = new VolleyError(errMessage);
+                volleyError = error;
+            }
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+    	
+    	return volleyError;
+    }
+    
     @Override
     protected void deliverResponse(JSONObject response) {
         listener.onResponse(response);

@@ -12,4 +12,5 @@ public class UrlCollection {
 	public static final String GET_EVENTS_URL = MAIN_URL + "/events/";
 	public static final String MAKE_RESERVATION_URL = MAIN_URL + "/reservation";
 	public static final String DELETE_RESERVATION_URL = MAIN_URL + "/reservation/";
+	public static final String FORGOT_PASSWORD_URL = MAIN_URL + "/getnewpassword";
 }

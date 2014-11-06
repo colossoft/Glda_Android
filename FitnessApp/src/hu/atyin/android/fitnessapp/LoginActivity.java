@@ -14,6 +14,8 @@ import org.json.JSONObject;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -21,6 +23,7 @@ import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.android.volley.Request.Method;
 import com.android.volley.Response.ErrorListener;
@@ -33,6 +36,7 @@ public class LoginActivity extends Activity {
 	private EditText edPassword;
 	private Button btnCancel;
 	private Button btnLogin;
+	private TextView btnForgotPassword;
 	
 	SessionManager session;
 	
@@ -53,6 +57,7 @@ public class LoginActivity extends Activity {
 		edPassword = (EditText) findViewById(R.id.edPassword);
 		btnCancel = (Button) findViewById(R.id.btnCancel);
 		btnLogin = (Button) findViewById(R.id.btnLogin);
+		btnForgotPassword = (TextView) findViewById(R.id.tvForgotPassword);
 		
 		btnCancel.setOnClickListener(new OnClickListener() {
 			@Override
@@ -84,6 +89,12 @@ public class LoginActivity extends Activity {
 					pDialog.show();
 					
 					Map<String, String> headers = new HashMap<String, String>();
+					SharedPreferences prefs = getSharedPreferences("CommonPrefs", Activity.MODE_PRIVATE);
+					String settedValue = prefs.getString("Language", null);
+					if(settedValue != null) {
+						headers.put("Accept-Language", settedValue);
+					}
+					
 					Map<String, String> params = new HashMap<String, String>();
 					params.put("email", email);
 					params.put("password", password);
@@ -96,15 +107,10 @@ public class LoginActivity extends Activity {
 									pDialog.dismiss();
 									
 									try {
-										if(response.getBoolean("error")) {
-											new AlertDialog.Builder(LoginActivity.this).setTitle("Bejelentkezés").setMessage("Hibás email vagy jelszó!").setNeutralButton("OK", null).show();
-										}
-										else {
-											session.createLoginSession( response.getString("first_name"), 
-																		response.getString("last_name"), 
-																		response.getString("email"), 
-																		response.getString("api_key") );
-										}
+										session.createLoginSession( response.getString("first_name"), 
+																	response.getString("last_name"), 
+																	response.getString("email"), 
+																	response.getString("api_key") );
 									} catch (JSONException e) {
 										e.printStackTrace();
 										new AlertDialog.Builder(LoginActivity.this).setTitle("Bejelentkezés").setMessage("A bejelentkezés sikertelen! Kérjük próbáld újra!").setNeutralButton("OK", null).show();
@@ -114,9 +120,8 @@ public class LoginActivity extends Activity {
 							new ErrorListener() {
 								@Override
 								public void onErrorResponse(VolleyError error) {
-									Log.d("FITNESS", "Error: " + error.getMessage());
 									pDialog.dismiss();
-									new AlertDialog.Builder(LoginActivity.this).setTitle("Bejelentkezés").setMessage("A bejelentkezés sikertelen! Kérjük próbáld újra!").setNeutralButton("OK", null).show();
+									new AlertDialog.Builder(LoginActivity.this).setTitle("Bejelentkezés").setMessage(error.getMessage()).setNeutralButton("OK", null).show();
 								}
 							}
 					);
@@ -126,5 +131,12 @@ public class LoginActivity extends Activity {
 			}
 		});
 		
+		btnForgotPassword.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent fpIntent = new Intent(LoginActivity.this, ForgotPasswordActivity.class);
+				startActivity(fpIntent);				
+			}
+		});
 	}
 }

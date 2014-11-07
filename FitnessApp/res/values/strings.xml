@@ -29,6 +29,8 @@
     <string name="app_forgot_password_sendBtnText">Küldés</string>
     <string name="app_forgot_password_text">Add meg az e-mail címed amivel regisztráltál! Ellenőrizd a postafiókod és a kapott új jelszóval lépj be, majd belépés után változtasd meg!</string>
     
+    <string name="app_change_password_title">Jelszó módosítása</string>
+    
     <string name="app_location_locationtitle">Válassz helyszínt</string>
 
 </resources>

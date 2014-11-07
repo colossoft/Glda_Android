@@ -26,13 +26,12 @@ import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.DialogInterface.OnClickListener;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.location.Location;
-import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBar;
@@ -247,16 +246,16 @@ public class LocationsActivity extends ActionBarActivity {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
-			case R.id.action_profile:
+			case R.id.action_change_password:
 				Toast.makeText(LocationsActivity.this, "Profil megnyomva!", Toast.LENGTH_SHORT).show();
-				return true;
-			case R.id.action_logout:
-				logoutUser();
 				return true;
 			case R.id.action_setting:
 				setting();
 				return true;
-	
+			case R.id.action_logout:
+				logoutUser();
+				return true;
+			
 			default:
 				return super.onOptionsItemSelected(item);
 		}

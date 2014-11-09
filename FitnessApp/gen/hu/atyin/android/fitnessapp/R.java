@@ -1526,7 +1526,10 @@ containing a value of this type.
         public static final int app_registration_firstname=0x7f0a0039;
         public static final int app_registration_lastname=0x7f0a0038;
         public static final int app_registration_passwordagain=0x7f0a003a;
+        public static final int app_reservation_titleText=0x7f0a003d;
+        public static final int app_room_titleText=0x7f0a003c;
         public static final int app_setting_title=0x7f0a002b;
+        public static final int app_timetable_freeplacesText=0x7f0a003e;
         /**   Title for notification shown when GooglePlayServices needs to be
         enabled for a application to work. [CHAR LIMIT=70] 
          */

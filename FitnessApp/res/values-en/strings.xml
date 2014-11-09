@@ -28,4 +28,10 @@
     <string name="app_registration_passwordagain">Password again</string>
     
     <string name="app_location_locationtitle">Choose Location</string>
+    
+    <string name="app_room_titleText">Choose Room</string>
+    
+    <string name="app_reservation_titleText">Trainers and Times</string>
+    
+    <string name="app_timetable_freeplacesText">"  |  Free places: "</string>
 </resources>

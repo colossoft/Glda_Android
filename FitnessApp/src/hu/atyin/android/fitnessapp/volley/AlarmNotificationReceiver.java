@@ -18,7 +18,7 @@ public class AlarmNotificationReceiver extends BroadcastReceiver {
 		NotificationManager notificationManager = 
 				(NotificationManager) arg0.getSystemService(Context.NOTIFICATION_SERVICE);
 
-		CharSequence text = "Önnek edzése leszt!";
+		CharSequence text = "Önnek edzése lesz!";
 		long when = System.currentTimeMillis();
 		
 	    PendingIntent pendingIntent =PendingIntent.getActivity(arg0, 0, new Intent(arg0, LocationsActivity.class), 0);

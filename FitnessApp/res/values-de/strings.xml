@@ -28,4 +28,10 @@
     <string name="app_registration_passwordagain">Passwort wiederholen</string>
     
     <string name="app_location_locationtitle">Wählen Sie Ihren Standort</string>
+    
+    <string name="app_room_titleText">Wählen Sie Ihr Zimmer</string>
+    
+    <string name="app_reservation_titleText">Trainer und Termine</string>
+    
+    <string name="app_timetable_freeplacesText">"  |  Freie Seiten: "</string>
 </resources>

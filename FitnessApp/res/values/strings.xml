@@ -27,5 +27,11 @@
     <string name="app_registration_passwordagain">Jelszó újra</string>
     
     <string name="app_location_locationtitle">Válassz helyszínt</string>
+    
+    <string name="app_room_titleText">Válassz termet</string>
+    
+    <string name="app_reservation_titleText">Edzők és időpontok</string>
+    
+    <string name="app_timetable_freeplacesText">"  |  Szabad helyek: "</string>
 
 </resources>

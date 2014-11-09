@@ -62,6 +62,13 @@
         </activity>
         
         <activity
+            android:name="hu.atyin.android.fitnessapp.ForgotPasswordActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppBaseTheme"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        <activity
             android:name="hu.atyin.android.fitnessapp.LocationsActivity"
             android:label="@string/app_name"
             android:theme="@style/AppBaseTheme"

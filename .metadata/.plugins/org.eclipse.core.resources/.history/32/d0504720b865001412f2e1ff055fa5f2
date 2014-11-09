@@ -1,0 +1,29 @@
+package hu.atyin.android.fitnessapp;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.Window;
+import android.widget.Button;
+import android.widget.EditText;
+
+public class ForgotPasswordActivity extends Activity {
+
+	private EditText edEmail;
+	private Button btnCancel;
+	private Button btnSend;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		setContentView(R.layout.forgot_password_activity_layout);
+		
+		// View referenciák elkérése
+		edEmail = (EditText) findViewById(R.id.edEmail);
+		btnCancel = (Button) findViewById(R.id.btnCancel);
+		btnSend = (Button) findViewById(R.id.btnSend);
+		
+		
+	}
+	
+}

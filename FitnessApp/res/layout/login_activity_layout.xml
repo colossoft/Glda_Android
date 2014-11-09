@@ -59,7 +59,7 @@
 	        android:background="@null"
 	        android:padding="5dp"
 	        android:textColor="#4d4d4e"
-	        android:hint="@string/app_login_emailBtnText" />
+	        android:hint="@string/app_login_emailEdHint" />
 	    
 	    <TextView 
 	        android:layout_width="match_parent"
@@ -79,7 +79,7 @@
 	        android:background="@null"
 	        android:padding="5dp"
 	        android:textColor="#4d4d4e"
-	        android:hint="@string/app_login_passwordLabel" />
+	        android:hint="@string/app_login_passwordEdHint" />
 	    
 	    <TextView 
 	        android:layout_width="match_parent"
@@ -99,7 +99,7 @@
 	    android:layout_marginRight="20dp"
 	    android:layout_marginLeft="20dp"
 	    android:layout_marginBottom="20dp"
-	    android:layout_alignParentBottom="true"
+	    android:layout_above="@+id/tvForgotPassword"
 	    android:gravity="center_horizontal"
 	    android:orientation="horizontal" >
 	    
@@ -125,15 +125,16 @@
 	        android:text="@string/app_login_loginBtnText" />
 	    
 	</LinearLayout>
-    
-</RelativeLayout>
-
-
-    <!-- <TextView 
+	
+	<TextView 
         android:id="@+id/tvForgotPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentBottom="true"
         android:textColor="#2b2fff"
-        android:layout_gravity="center"
-        android:text="Elfelejtettem a jelszót" /> -->
+        android:layout_centerHorizontal="true"
+        android:text="Elfelejtettem a jelszót" />
+    
+</RelativeLayout>
+

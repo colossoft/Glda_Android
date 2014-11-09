@@ -4,15 +4,14 @@
     <string name="app_name">Gilda Max</string>
     <string name="action_settings">Beállítások</string>
     <string name="pref_title">Időzítés</string>
-    <string name="pref_summary">Állítsa be, hogy az edzés kezdete előtt hány órával értesíse az alkalmazás</string>
+    <string name="pref_summary">Állítsa be, hogy az edzés kezdete előtt hány órával értesítse az alkalmazás</string>
     <string name="pref_default">2</string>
     
     <string name="app_setting_title">Az Alkalmazás beállításai</string>
     <string name="app_login_login">Bejelentkezés</string>
     <string name="app_login_cancalBtnText">Mégse</string>
-    <string name="app_login_emailBtnText">E-mail cím</string>
-    
-    <string name="app_login_passwordLabel">Jelszó</string>    
+    <string name="app_login_emailEdHint">E-mail cím</string>
+    <string name="app_login_passwordEdHint">Jelszó</string>    
     <string name="app_login_loginBtnText">Belépek</string>    
     <string name="app_login_registrationLabel">Regisztráció</string>    
     <string name="app_login_entryBtnText">Belépés</string>
@@ -25,6 +24,12 @@
     <string name="app_registration_lastname">Keresztnév</string>
     <string name="app_registration_firstname">Vezetéknév</string>
     <string name="app_registration_passwordagain">Jelszó újra</string>
+    
+    <string name="app_forgot_password_title">Új jelszó igénylése</string>
+    <string name="app_forgot_password_sendBtnText">Küldés</string>
+    <string name="app_forgot_password_text">Add meg az e-mail címed amivel regisztráltál! Ellenőrizd a postafiókod és a kapott új jelszóval lépj be, majd belépés után változtasd meg!</string>
+    
+    <string name="app_change_password_title">Jelszó módosítása</string>
     
     <string name="app_location_locationtitle">Válassz helyszínt</string>
     

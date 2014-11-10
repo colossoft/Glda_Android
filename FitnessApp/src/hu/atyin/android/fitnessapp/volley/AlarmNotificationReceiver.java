@@ -9,8 +9,11 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.util.Log;
 
 public class AlarmNotificationReceiver extends BroadcastReceiver {
+	
+	public String message = AlarmNotificationHelper.GetMessage();
 
 	@SuppressWarnings("deprecation")
 	@Override
@@ -23,9 +26,9 @@ public class AlarmNotificationReceiver extends BroadcastReceiver {
 		
 	    PendingIntent pendingIntent =PendingIntent.getActivity(arg0, 0, new Intent(arg0, LocationsActivity.class), 0);
 
-		
+		Log.d("FITNESS", "TRAININGNAME_INSIDE: " + message);
 		Notification notification = new Notification(R.drawable.ic_launcher,text, when);
-		notification.setLatestEventInfo(arg0, "GildaMax", "Gyúrunk vazzeg?", pendingIntent);
+		notification.setLatestEventInfo(arg0, "GildaMax", message, pendingIntent);
 
 	    long[] vibrate = {0,2000};
 	    notification.vibrate = vibrate;

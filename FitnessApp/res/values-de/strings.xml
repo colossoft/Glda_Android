@@ -3,8 +3,8 @@
 
     <string name="app_name">Gilda Max</string>
     <string name="action_settings">Settings</string>
-    <string name="pref_title">Időzítés</string>
-    <string name="pref_summary">Állítsa be, hogy az edzés kezdete előtt hány órával értesíse az alkalmazás</string>
+    <string name="pref_title">Timer</string>
+    <string name="pref_summary">Please set the alarm manager, how many hours before notify, before start your training</string>
     <string name="pref_default">2</string>
     
     <string name="app_setting_title">Az alkalmazás beállításai</string>
@@ -28,10 +28,13 @@
     <string name="app_registration_passwordagain">Passwort wiederholen</string>
     
     <string name="app_location_locationtitle">Wählen Sie Ihren Standort</string>
+    <string name="app_location_quitQuestion">Bist du sicher, dass Sie sich abmelden möchten?</string>
     
     <string name="app_room_titleText">Wählen Sie Ihr Zimmer</string>
     
     <string name="app_reservation_titleText">Trainer und Termine</string>
+    <string name="app_reservation_noTrainingInThisRoom">In diesem Zimmer leider wird nicht in naher Zukunft Ausbildung sein!</string>
+    <string name="app_reservation_successfulReservation">Erfolgreiche Reservierung!</string>
     
     <string name="app_timetable_freeplacesText">"  |  Freie Seiten: "</string>
 </resources>

@@ -1526,24 +1526,27 @@ containing a value of this type.
         public static final int app_language_hun=0x7f0a0035;
         public static final int app_language_title=0x7f0a0034;
         public static final int app_location_locationtitle=0x7f0a003f;
+        public static final int app_location_quitQuestion=0x7f0a0040;
         public static final int app_login_cancalBtnText=0x7f0a002d;
-        public static final int app_login_emailBtnText=0x7f0a0043;
+        public static final int app_login_emailBtnText=0x7f0a0046;
         public static final int app_login_emailEdHint=0x7f0a002e;
         public static final int app_login_entryBtnText=0x7f0a0032;
         public static final int app_login_languagechooserBtnText=0x7f0a0033;
         public static final int app_login_login=0x7f0a002c;
         public static final int app_login_loginBtnText=0x7f0a0030;
         public static final int app_login_passwordEdHint=0x7f0a002f;
-        public static final int app_login_passwordLabel=0x7f0a0044;
+        public static final int app_login_passwordLabel=0x7f0a0047;
         public static final int app_login_registrationLabel=0x7f0a0031;
         public static final int app_name=0x7f0a0026;
         public static final int app_registration_firstname=0x7f0a0039;
         public static final int app_registration_lastname=0x7f0a0038;
         public static final int app_registration_passwordagain=0x7f0a003a;
-        public static final int app_reservation_titleText=0x7f0a0041;
-        public static final int app_room_titleText=0x7f0a0040;
+        public static final int app_reservation_noTrainingInThisRoom=0x7f0a0043;
+        public static final int app_reservation_successfulReservation=0x7f0a0044;
+        public static final int app_reservation_titleText=0x7f0a0042;
+        public static final int app_room_titleText=0x7f0a0041;
         public static final int app_setting_title=0x7f0a002b;
-        public static final int app_timetable_freeplacesText=0x7f0a0042;
+        public static final int app_timetable_freeplacesText=0x7f0a0045;
         /**   Title for notification shown when GooglePlayServices needs to be
         enabled for a application to work. [CHAR LIMIT=70] 
          */

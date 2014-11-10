@@ -12,6 +12,7 @@ import hu.atyin.android.fitnessapp.volley.UrlCollection;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -267,7 +268,8 @@ public class LocationsActivity extends ActionBarActivity {
 	}
 	
 	public void showErrorAlert() {
-		new AlertDialog.Builder(LocationsActivity.this).setTitle("Hiba").setMessage("Sajnos nem sikerült letölteni a helyszíneket!")
+		new AlertDialog.Builder(LocationsActivity.this).setTitle("Hiba")
+		.setMessage("Sajnos nem sikerült letölteni a helyszíneket!")
 			.setNegativeButton("Kilépés", new OnClickListener() {
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
@@ -286,7 +288,8 @@ public class LocationsActivity extends ActionBarActivity {
 	}
 	
 	private void logoutUser() {
-		new AlertDialog.Builder(LocationsActivity.this).setTitle("Kijelentkezés").setMessage("Biztos ki akarsz jelentkezni?")
+		new AlertDialog.Builder(LocationsActivity.this).setTitle("Kijelentkezés")
+		.setMessage(R.string.app_location_quitQuestion)
 		.setNegativeButton("Nem", null)
 		.setPositiveButton("Igen", new OnClickListener() {
 			@Override
@@ -324,26 +327,7 @@ public class LocationsActivity extends ActionBarActivity {
         builder.append("\n Timer: "
                 + sharedPrefs.getString("pref_key", "NULL"));
         
-        //Toast.makeText(LocationsActivity.this, builder.toString(), Toast.LENGTH_SHORT).show();
         Log.d("FITNESS", builder.toString());
-        
-        Calendar calendar = Calendar.getInstance();
-        
-        //calendar.set(Calendar.MONTH, 10);
-        //calendar.set(Calendar.YEAR, 2014);
-        //calendar.set(Calendar.DAY_OF_MONTH, 25);
-   
-        //calendar.set(Calendar.HOUR_OF_DAY, 13);
-        //calendar.set(Calendar.MINUTE, 29);
-        
-        calendar.add(Calendar.MINUTE, 1);
-        
-        AlarmManager alarmManager = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
-        Intent intent = new Intent(this, AlarmNotificationReceiver.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_ONE_SHOT);
-        alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + (10 * 1000), pendingIntent);
 	}
 	
 	private void initializeMap() {

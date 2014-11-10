@@ -32,10 +32,13 @@
     <string name="app_change_password_title">Jelszó módosítása</string>
     
     <string name="app_location_locationtitle">Válassz helyszínt</string>
+    <string name="app_location_quitQuestion">Biztos ki akar jelentkezni?</string>
     
     <string name="app_room_titleText">Válassz termet</string>
     
     <string name="app_reservation_titleText">Edzők és időpontok</string>
+    <string name="app_reservation_noTrainingInThisRoom">Ebben a teremben sajnos nem lesz edzés a közeljövőben!</string>
+    <string name="app_reservation_successfulReservation">A foglalás sikeres!</string>
     
     <string name="app_timetable_freeplacesText">"  |  Szabad helyek: "</string>
 

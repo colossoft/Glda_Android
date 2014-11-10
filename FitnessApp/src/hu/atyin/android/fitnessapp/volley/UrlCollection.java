@@ -13,4 +13,5 @@ public class UrlCollection {
 	public static final String MAKE_RESERVATION_URL = MAIN_URL + "/reservation";
 	public static final String DELETE_RESERVATION_URL = MAIN_URL + "/reservation/";
 	public static final String FORGOT_PASSWORD_URL = MAIN_URL + "/getnewpassword";
+	public static final String CHANGE_PASSWORD_URL = MAIN_URL + "/passmodify";
 }

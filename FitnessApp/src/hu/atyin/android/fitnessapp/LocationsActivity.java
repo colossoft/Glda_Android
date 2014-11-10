@@ -247,7 +247,7 @@ public class LocationsActivity extends ActionBarActivity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 			case R.id.action_change_password:
-				Toast.makeText(LocationsActivity.this, "Profil megnyomva!", Toast.LENGTH_SHORT).show();
+				changePassword();
 				return true;
 			case R.id.action_setting:
 				setting();
@@ -284,6 +284,12 @@ public class LocationsActivity extends ActionBarActivity {
 				}
 			}).show();
 	}
+	
+	private void changePassword() {
+		Intent cpIntent = new Intent(LocationsActivity.this, ChangePasswordActivity.class);
+		startActivity(cpIntent);
+	}
+
 	
 	private void logoutUser() {
 		new AlertDialog.Builder(LocationsActivity.this).setTitle("Kijelentkezés").setMessage("Biztos ki akarsz jelentkezni?")

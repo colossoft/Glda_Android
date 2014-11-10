@@ -8,6 +8,7 @@
     <string name="pref_default">2</string>
     
     <string name="app_setting_title">Az Alkalmazás beállításai</string>
+    
     <string name="app_login_login">Bejelentkezés</string>
     <string name="app_login_cancalBtnText">Mégse</string>
     <string name="app_login_emailEdHint">E-mail cím</string>
@@ -16,6 +17,8 @@
     <string name="app_login_registrationLabel">Regisztráció</string>    
     <string name="app_login_entryBtnText">Belépés</string>
     <string name="app_login_languagechooserBtnText">Nyelvválasztás</string>
+    <string name="app_login_forgotPasswordBtnTitle">Elfelejtettem a jelszót</string>
+    
     <string name="app_language_title">Válassz egy nyelvet!</string>
     <string name="app_language_hun">Magyar</string>
     <string name="app_language_eng">Angol</string>
@@ -27,9 +30,21 @@
     
     <string name="app_forgot_password_title">Új jelszó igénylése</string>
     <string name="app_forgot_password_sendBtnText">Küldés</string>
+    <string name="app_forgot_password_missingEmailAddress">Add meg az e-mail címet!</string>
+    <string name="app_forgot_password_oparationFailed">Az új jelszó igénylés sikertelen! Kérjük próbáld újra!</string>
     <string name="app_forgot_password_text">Add meg az e-mail címed amivel regisztráltál! Ellenőrizd a postafiókod és a kapott új jelszóval lépj be, majd belépés után változtasd meg!</string>
+    <string name="app_forgot_password_sendigTitle">Küldés...</string>
     
     <string name="app_change_password_title">Jelszó módosítása</string>
+    <string name="app_change_password_edOldPasswordHint">Régi jelszó</string>
+    <string name="app_change_password_edNewPasswordHint">Új jelszó</string>
+    <string name="app_change_password_edNewPasswordAgainHint">Új jelszó újra</string>
+    <string name="app_change_password_allFieldRequired">Minden mező kitöltése kötelező!</string>
+    <string name="app_change_password_newPasswordsNotEqual">A megadott új jelszavak nem egyeznek!</string>
+    <string name="app_change_password_operationFailed">A jelszó megváltoztatása sikertelen! Kérjük próbáld újra!</string>
+    
+    <string name="app_my_reservations_reservationTimeTitle">Foglalás időpontja:</string>
+    <string name="app_my_reservation_deleteReservationBtnTitle">Lemondás</string>
     
     <string name="app_location_locationtitle">Válassz helyszínt</string>
     <string name="app_location_quitQuestion">Biztos ki akar jelentkezni?</string>
@@ -41,5 +56,8 @@
     <string name="app_reservation_successfulReservation">A foglalás sikeres!</string>
     
     <string name="app_timetable_freeplacesText">"  |  Szabad helyek: "</string>
+    
+    
+    
 
 </resources>

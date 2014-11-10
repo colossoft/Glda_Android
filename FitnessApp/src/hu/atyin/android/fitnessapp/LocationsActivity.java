@@ -5,14 +5,11 @@ import hu.atyin.android.fitnessapp.model.FitnessLocation;
 import hu.atyin.android.fitnessapp.model.MyLocation;
 import hu.atyin.android.fitnessapp.model.MyLocation.LocationResult;
 import hu.atyin.android.fitnessapp.session.SessionManager;
-import hu.atyin.android.fitnessapp.volley.AlarmNotificationReceiver;
 import hu.atyin.android.fitnessapp.volley.AppController;
 import hu.atyin.android.fitnessapp.volley.CustomJsonRequest;
 import hu.atyin.android.fitnessapp.volley.UrlCollection;
 
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -21,9 +18,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.annotation.SuppressLint;
-import android.app.AlarmManager;
 import android.app.AlertDialog;
-import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -248,7 +243,7 @@ public class LocationsActivity extends ActionBarActivity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 			case R.id.action_change_password:
-				Toast.makeText(LocationsActivity.this, "Profil megnyomva!", Toast.LENGTH_SHORT).show();
+				changePassword();
 				return true;
 			case R.id.action_setting:
 				setting();
@@ -286,6 +281,12 @@ public class LocationsActivity extends ActionBarActivity {
 				}
 			}).show();
 	}
+	
+	private void changePassword() {
+		Intent cpIntent = new Intent(LocationsActivity.this, ChangePasswordActivity.class);
+		startActivity(cpIntent);
+	}
+
 	
 	private void logoutUser() {
 		new AlertDialog.Builder(LocationsActivity.this).setTitle("Kijelentkezés")

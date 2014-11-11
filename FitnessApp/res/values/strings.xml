@@ -8,6 +8,9 @@
     <string name="pref_default">2</string>
     
     <string name="app_setting_title">Az Alkalmazás beállításai</string>
+    <string name="app_error_title">Hiba</string>
+    <string name="app_btnBack_Title">Vissza</string>
+    <string name="app_btnAgain_Title">Újra</string>
     
     <string name="app_login_login">Bejelentkezés</string>
     <string name="app_login_cancalBtnText">Mégse</string>
@@ -43,8 +46,11 @@
     <string name="app_change_password_newPasswordsNotEqual">A megadott új jelszavak nem egyeznek!</string>
     <string name="app_change_password_operationFailed">A jelszó megváltoztatása sikertelen! Kérjük próbáld újra!</string>
     
+    <string name="app_my_reservations_title">Foglalásaim</string>
     <string name="app_my_reservations_reservationTimeTitle">Foglalás időpontja:</string>
     <string name="app_my_reservation_deleteReservationBtnTitle">Lemondás</string>
+    <string name="app_my_reservations_downloadingReservations">Foglalásaim letöltése...</string>
+    <string name="app_my_reservations_noReservations">Még nincs foglalásod!</string>
     
     <string name="app_location_locationtitle">Válassz helyszínt</string>
     <string name="app_location_quitQuestion">Biztos ki akar jelentkezni?</string>
@@ -56,6 +62,11 @@
     <string name="app_reservation_successfulReservation">A foglalás sikeres!</string>
     
     <string name="app_timetable_freeplacesText">"  |  Szabad helyek: "</string>
+    
+    
+    
+    
+    
     
     
     

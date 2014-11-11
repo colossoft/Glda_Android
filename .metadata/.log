@@ -2468,3 +2468,189 @@ java.lang.IllegalStateException: Circular dependencies cannot exist in RelativeL
 
 !ENTRY com.android.ide.eclipse.adt 2 0 2014-11-10 16:10:58.421
 !MESSAGE Nexus 5: Couldn't resolve resource @string/app_my_reservation_deleteReservationBtnTitle
+
+!ENTRY org.eclipse.ltk.core.refactoring 4 0 2014-11-11 16:52:28.308
+!MESSAGE The refactoring executed at 1970.01.01. 0:59:59 contributed a refactoring descriptor with invalid format:
+!SUBENTRY 1 org.eclipse.ltk.core.refactoring 4 0 2014-11-11 16:52:28.308
+!MESSAGE Extracts string 'Foglalásaim' into R.string.app_my_reservations_title
+
+!ENTRY org.eclipse.ltk.core.refactoring 4 10000 2014-11-11 16:52:28.311
+!MESSAGE Internal Error
+!STACK 1
+org.eclipse.core.runtime.CoreException: The value of key 'xml-attr-name' is not a string
+	at org.eclipse.ltk.internal.core.refactoring.history.RefactoringHistoryManager.checkArgumentMap(RefactoringHistoryManager.java:131)
+	at org.eclipse.ltk.internal.core.refactoring.history.RefactoringHistoryService.checkDescriptor(RefactoringHistoryService.java:613)
+	at org.eclipse.ltk.internal.core.refactoring.history.RefactoringHistoryService.performHistoryNotification(RefactoringHistoryService.java:955)
+	at org.eclipse.ltk.internal.core.refactoring.history.RefactoringHistoryService.access$0(RefactoringHistoryService.java:949)
+	at org.eclipse.ltk.internal.core.refactoring.history.RefactoringHistoryService$2.historyNotification(RefactoringHistoryService.java:379)
+	at org.eclipse.core.commands.operations.DefaultOperationHistory$2.run(DefaultOperationHistory.java:941)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.commands.operations.DefaultOperationHistory.notifyListeners(DefaultOperationHistory.java:930)
+	at org.eclipse.core.commands.operations.DefaultOperationHistory.notifyAboutToExecute(DefaultOperationHistory.java:953)
+	at org.eclipse.core.commands.operations.DefaultOperationHistory.openOperation(DefaultOperationHistory.java:1335)
+	at org.eclipse.ltk.internal.core.refactoring.UndoManager2.aboutToPerformChange(UndoManager2.java:139)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation$1.run(PerformChangeOperation.java:254)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.executeChange(PerformChangeOperation.java:306)
+	at org.eclipse.ltk.internal.ui.refactoring.UIPerformChangeOperation.executeChange(UIPerformChangeOperation.java:92)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.run(PerformChangeOperation.java:218)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ltk.internal.ui.refactoring.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:87)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+!SUBENTRY 1 org.eclipse.ltk.core.refactoring 4 10007 2014-11-11 16:52:28.335
+!MESSAGE The value of key 'xml-attr-name' is not a string
+
+!ENTRY org.eclipse.ltk.core.refactoring 4 0 2014-11-11 17:12:17.716
+!MESSAGE The refactoring executed at 1970.01.01. 0:59:59 contributed a refactoring descriptor with invalid format:
+!SUBENTRY 1 org.eclipse.ltk.core.refactoring 4 0 2014-11-11 17:12:17.716
+!MESSAGE Extracts string 'Foglalásaim letöltése...' into R.string.app_my_reservations_downloadingReservations
+
+!ENTRY org.eclipse.ltk.core.refactoring 4 10000 2014-11-11 17:12:17.720
+!MESSAGE Internal Error
+!STACK 1
+org.eclipse.core.runtime.CoreException: The value of key 'xml-attr-name' is not a string
+	at org.eclipse.ltk.internal.core.refactoring.history.RefactoringHistoryManager.checkArgumentMap(RefactoringHistoryManager.java:131)
+	at org.eclipse.ltk.internal.core.refactoring.history.RefactoringHistoryService.checkDescriptor(RefactoringHistoryService.java:613)
+	at org.eclipse.ltk.internal.core.refactoring.history.RefactoringHistoryService.performHistoryNotification(RefactoringHistoryService.java:955)
+	at org.eclipse.ltk.internal.core.refactoring.history.RefactoringHistoryService.access$0(RefactoringHistoryService.java:949)
+	at org.eclipse.ltk.internal.core.refactoring.history.RefactoringHistoryService$2.historyNotification(RefactoringHistoryService.java:379)
+	at org.eclipse.core.commands.operations.DefaultOperationHistory$2.run(DefaultOperationHistory.java:941)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.commands.operations.DefaultOperationHistory.notifyListeners(DefaultOperationHistory.java:930)
+	at org.eclipse.core.commands.operations.DefaultOperationHistory.notifyAboutToExecute(DefaultOperationHistory.java:953)
+	at org.eclipse.core.commands.operations.DefaultOperationHistory.openOperation(DefaultOperationHistory.java:1335)
+	at org.eclipse.ltk.internal.core.refactoring.UndoManager2.aboutToPerformChange(UndoManager2.java:139)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation$1.run(PerformChangeOperation.java:254)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.executeChange(PerformChangeOperation.java:306)
+	at org.eclipse.ltk.internal.ui.refactoring.UIPerformChangeOperation.executeChange(UIPerformChangeOperation.java:92)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.run(PerformChangeOperation.java:218)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ltk.internal.ui.refactoring.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:87)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+!SUBENTRY 1 org.eclipse.ltk.core.refactoring 4 10007 2014-11-11 17:12:17.720
+!MESSAGE The value of key 'xml-attr-name' is not a string
+
+!ENTRY org.eclipse.ltk.core.refactoring 4 0 2014-11-11 17:28:49.752
+!MESSAGE The refactoring executed at 1970.01.01. 0:59:59 contributed a refactoring descriptor with invalid format:
+!SUBENTRY 1 org.eclipse.ltk.core.refactoring 4 0 2014-11-11 17:28:49.752
+!MESSAGE Extracts string 'Hiba' into R.string.app_error_title
+
+!ENTRY org.eclipse.ltk.core.refactoring 4 10000 2014-11-11 17:28:49.756
+!MESSAGE Internal Error
+!STACK 1
+org.eclipse.core.runtime.CoreException: The value of key 'xml-attr-name' is not a string
+	at org.eclipse.ltk.internal.core.refactoring.history.RefactoringHistoryManager.checkArgumentMap(RefactoringHistoryManager.java:131)
+	at org.eclipse.ltk.internal.core.refactoring.history.RefactoringHistoryService.checkDescriptor(RefactoringHistoryService.java:613)
+	at org.eclipse.ltk.internal.core.refactoring.history.RefactoringHistoryService.performHistoryNotification(RefactoringHistoryService.java:955)
+	at org.eclipse.ltk.internal.core.refactoring.history.RefactoringHistoryService.access$0(RefactoringHistoryService.java:949)
+	at org.eclipse.ltk.internal.core.refactoring.history.RefactoringHistoryService$2.historyNotification(RefactoringHistoryService.java:379)
+	at org.eclipse.core.commands.operations.DefaultOperationHistory$2.run(DefaultOperationHistory.java:941)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.commands.operations.DefaultOperationHistory.notifyListeners(DefaultOperationHistory.java:930)
+	at org.eclipse.core.commands.operations.DefaultOperationHistory.notifyAboutToExecute(DefaultOperationHistory.java:953)
+	at org.eclipse.core.commands.operations.DefaultOperationHistory.openOperation(DefaultOperationHistory.java:1335)
+	at org.eclipse.ltk.internal.core.refactoring.UndoManager2.aboutToPerformChange(UndoManager2.java:139)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation$1.run(PerformChangeOperation.java:254)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.executeChange(PerformChangeOperation.java:306)
+	at org.eclipse.ltk.internal.ui.refactoring.UIPerformChangeOperation.executeChange(UIPerformChangeOperation.java:92)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.run(PerformChangeOperation.java:218)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ltk.internal.ui.refactoring.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:87)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+!SUBENTRY 1 org.eclipse.ltk.core.refactoring 4 10007 2014-11-11 17:28:49.756
+!MESSAGE The value of key 'xml-attr-name' is not a string
+
+!ENTRY org.eclipse.ltk.core.refactoring 4 0 2014-11-11 17:29:06.535
+!MESSAGE The refactoring executed at 1970.01.01. 0:59:59 contributed a refactoring descriptor with invalid format:
+!SUBENTRY 1 org.eclipse.ltk.core.refactoring 4 0 2014-11-11 17:29:06.535
+!MESSAGE Extracts string 'Vissza' into R.string.app_btnBack_Title
+
+!ENTRY org.eclipse.ltk.core.refactoring 4 10000 2014-11-11 17:29:06.538
+!MESSAGE Internal Error
+!STACK 1
+org.eclipse.core.runtime.CoreException: The value of key 'xml-attr-name' is not a string
+	at org.eclipse.ltk.internal.core.refactoring.history.RefactoringHistoryManager.checkArgumentMap(RefactoringHistoryManager.java:131)
+	at org.eclipse.ltk.internal.core.refactoring.history.RefactoringHistoryService.checkDescriptor(RefactoringHistoryService.java:613)
+	at org.eclipse.ltk.internal.core.refactoring.history.RefactoringHistoryService.performHistoryNotification(RefactoringHistoryService.java:955)
+	at org.eclipse.ltk.internal.core.refactoring.history.RefactoringHistoryService.access$0(RefactoringHistoryService.java:949)
+	at org.eclipse.ltk.internal.core.refactoring.history.RefactoringHistoryService$2.historyNotification(RefactoringHistoryService.java:379)
+	at org.eclipse.core.commands.operations.DefaultOperationHistory$2.run(DefaultOperationHistory.java:941)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.commands.operations.DefaultOperationHistory.notifyListeners(DefaultOperationHistory.java:930)
+	at org.eclipse.core.commands.operations.DefaultOperationHistory.notifyAboutToExecute(DefaultOperationHistory.java:953)
+	at org.eclipse.core.commands.operations.DefaultOperationHistory.openOperation(DefaultOperationHistory.java:1335)
+	at org.eclipse.ltk.internal.core.refactoring.UndoManager2.aboutToPerformChange(UndoManager2.java:139)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation$1.run(PerformChangeOperation.java:254)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.executeChange(PerformChangeOperation.java:306)
+	at org.eclipse.ltk.internal.ui.refactoring.UIPerformChangeOperation.executeChange(UIPerformChangeOperation.java:92)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.run(PerformChangeOperation.java:218)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ltk.internal.ui.refactoring.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:87)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+!SUBENTRY 1 org.eclipse.ltk.core.refactoring 4 10007 2014-11-11 17:29:06.539
+!MESSAGE The value of key 'xml-attr-name' is not a string
+
+!ENTRY org.eclipse.ltk.core.refactoring 4 0 2014-11-11 17:29:16.379
+!MESSAGE The refactoring executed at 1970.01.01. 0:59:59 contributed a refactoring descriptor with invalid format:
+!SUBENTRY 1 org.eclipse.ltk.core.refactoring 4 0 2014-11-11 17:29:16.379
+!MESSAGE Extracts string 'Újra' into R.string.app_btnAgain_Title
+
+!ENTRY org.eclipse.ltk.core.refactoring 4 10000 2014-11-11 17:29:16.382
+!MESSAGE Internal Error
+!STACK 1
+org.eclipse.core.runtime.CoreException: The value of key 'xml-attr-name' is not a string
+	at org.eclipse.ltk.internal.core.refactoring.history.RefactoringHistoryManager.checkArgumentMap(RefactoringHistoryManager.java:131)
+	at org.eclipse.ltk.internal.core.refactoring.history.RefactoringHistoryService.checkDescriptor(RefactoringHistoryService.java:613)
+	at org.eclipse.ltk.internal.core.refactoring.history.RefactoringHistoryService.performHistoryNotification(RefactoringHistoryService.java:955)
+	at org.eclipse.ltk.internal.core.refactoring.history.RefactoringHistoryService.access$0(RefactoringHistoryService.java:949)
+	at org.eclipse.ltk.internal.core.refactoring.history.RefactoringHistoryService$2.historyNotification(RefactoringHistoryService.java:379)
+	at org.eclipse.core.commands.operations.DefaultOperationHistory$2.run(DefaultOperationHistory.java:941)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.commands.operations.DefaultOperationHistory.notifyListeners(DefaultOperationHistory.java:930)
+	at org.eclipse.core.commands.operations.DefaultOperationHistory.notifyAboutToExecute(DefaultOperationHistory.java:953)
+	at org.eclipse.core.commands.operations.DefaultOperationHistory.openOperation(DefaultOperationHistory.java:1335)
+	at org.eclipse.ltk.internal.core.refactoring.UndoManager2.aboutToPerformChange(UndoManager2.java:139)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation$1.run(PerformChangeOperation.java:254)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.executeChange(PerformChangeOperation.java:306)
+	at org.eclipse.ltk.internal.ui.refactoring.UIPerformChangeOperation.executeChange(UIPerformChangeOperation.java:92)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.run(PerformChangeOperation.java:218)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ltk.internal.ui.refactoring.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:87)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+!SUBENTRY 1 org.eclipse.ltk.core.refactoring 4 10007 2014-11-11 17:29:16.383
+!MESSAGE The value of key 'xml-attr-name' is not a string
+
+!ENTRY org.eclipse.ltk.core.refactoring 4 0 2014-11-11 17:38:05.550
+!MESSAGE The refactoring executed at 1970.01.01. 0:59:59 contributed a refactoring descriptor with invalid format:
+!SUBENTRY 1 org.eclipse.ltk.core.refactoring 4 0 2014-11-11 17:38:05.550
+!MESSAGE Extracts string 'Még nincs foglalásod!' into R.string.app_my_reservations_noReservations
+
+!ENTRY org.eclipse.ltk.core.refactoring 4 10000 2014-11-11 17:38:05.554
+!MESSAGE Internal Error
+!STACK 1
+org.eclipse.core.runtime.CoreException: The value of key 'xml-attr-name' is not a string
+	at org.eclipse.ltk.internal.core.refactoring.history.RefactoringHistoryManager.checkArgumentMap(RefactoringHistoryManager.java:131)
+	at org.eclipse.ltk.internal.core.refactoring.history.RefactoringHistoryService.checkDescriptor(RefactoringHistoryService.java:613)
+	at org.eclipse.ltk.internal.core.refactoring.history.RefactoringHistoryService.performHistoryNotification(RefactoringHistoryService.java:955)
+	at org.eclipse.ltk.internal.core.refactoring.history.RefactoringHistoryService.access$0(RefactoringHistoryService.java:949)
+	at org.eclipse.ltk.internal.core.refactoring.history.RefactoringHistoryService$2.historyNotification(RefactoringHistoryService.java:379)
+	at org.eclipse.core.commands.operations.DefaultOperationHistory$2.run(DefaultOperationHistory.java:941)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.commands.operations.DefaultOperationHistory.notifyListeners(DefaultOperationHistory.java:930)
+	at org.eclipse.core.commands.operations.DefaultOperationHistory.notifyAboutToExecute(DefaultOperationHistory.java:953)
+	at org.eclipse.core.commands.operations.DefaultOperationHistory.openOperation(DefaultOperationHistory.java:1335)
+	at org.eclipse.ltk.internal.core.refactoring.UndoManager2.aboutToPerformChange(UndoManager2.java:139)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation$1.run(PerformChangeOperation.java:254)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.executeChange(PerformChangeOperation.java:306)
+	at org.eclipse.ltk.internal.ui.refactoring.UIPerformChangeOperation.executeChange(UIPerformChangeOperation.java:92)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.run(PerformChangeOperation.java:218)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ltk.internal.ui.refactoring.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:87)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+!SUBENTRY 1 org.eclipse.ltk.core.refactoring 4 10007 2014-11-11 17:38:05.554
+!MESSAGE The value of key 'xml-attr-name' is not a string

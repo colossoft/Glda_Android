@@ -242,6 +242,9 @@ public class LocationsActivity extends ActionBarActivity {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
+			case R.id.action_my_reservations:
+				myReservations();
+				return true;
 			case R.id.action_change_password:
 				changePassword();
 				return true;
@@ -280,6 +283,11 @@ public class LocationsActivity extends ActionBarActivity {
 					AppController.getInstance().addToRequestQueue(locationsJsonObjReq, tag_locations_json_obj);
 				}
 			}).show();
+	}
+	
+	private void myReservations() {
+		Intent mrIntent = new Intent(LocationsActivity.this, MyReservationsActivity.class);
+		startActivity(mrIntent);
 	}
 	
 	private void changePassword() {

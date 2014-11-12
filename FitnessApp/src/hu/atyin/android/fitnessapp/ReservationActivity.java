@@ -5,7 +5,6 @@ import hu.atyin.android.fitnessapp.adapter.WeekdaySpinnerAdapter;
 import hu.atyin.android.fitnessapp.model.TimetableEvent;
 import hu.atyin.android.fitnessapp.model.WeekdaySpinnerItem;
 import hu.atyin.android.fitnessapp.session.SessionManager;
-import hu.atyin.android.fitnessapp.volley.AlarmNotificationHelper;
 import hu.atyin.android.fitnessapp.volley.AlarmNotificationReceiver;
 import hu.atyin.android.fitnessapp.volley.AppController;
 import hu.atyin.android.fitnessapp.volley.CustomJsonRequest;
@@ -229,7 +228,7 @@ public class ReservationActivity extends ActionBarActivity implements OnNavigati
 				
 				final int event_id = timeTable.get(selectedWeekday).get(position).getId();
 				final String selected_start_time = timeTable.get(selectedWeekday).get(position).getStartTime();
-				final String selected_trainer_name = timeTable.get(selectedWeekday).get(position).getTrainerName();
+				final String selected_training_name = timeTable.get(selectedWeekday).get(position).getTrainingName();
 				Log.d("FITNESS", "Event ID: " + String.valueOf(event_id));
 				
 				if(timeTable.get(selectedWeekday).get(position).isReserved()) {
@@ -263,6 +262,8 @@ public class ReservationActivity extends ActionBarActivity implements OnNavigati
 														timeTable.get(selectedWeekday).get(position).setReserved(false);
 														
 														timetableAdapter.notifyDataSetChanged();
+														
+														DeleteNotification(position);
 													}
 												} catch (JSONException e) {
 													e.printStackTrace();
@@ -316,44 +317,10 @@ public class ReservationActivity extends ActionBarActivity implements OnNavigati
 														
 														timetableAdapter.notifyDataSetChanged();
 														
-														/*Map<String, String> headers = new HashMap<String, String>();
-														Map<String, String> params = new HashMap<String, String>();
-														headers.put("Authorization", userDetails.get("api_key"));
-														
-														//AlarmManager beállítása, hogy küldjön értesítést megadott idõ elõtt az edzésrõl
-														event = new CustomJsonRequest(Method.GET, UrlCollection.GET_EVENT_URL + String.valueOf(event_id), params, headers, 
-																new Listener<JSONObject>() {
+														SetNotification(weekdaySpinnerItems.get(selectedWeekday).getDate(), 
+																		selected_start_time, 
+																		selected_training_name, position);
 
-																	@Override
-																	public void onResponse(JSONObject response) {
-																		try {
-																			JSONObject eventJson = response.getJSONObject("event");
-																			Log.d("FITNESS", "STARTTIME: " + eventJson.getString("date"));
-																			Log.d("FITNESS", "STARTTIME: " + eventJson.getString("startTime"));
-																			Log.d("FITNESS", "STARTTIME: " + eventJson.getString("trainingName"));*/
-														
-																			SetNotification(weekdaySpinnerItems.get(selectedWeekday).getDate(), 
-																							selected_start_time, 
-																							selected_trainer_name);
-																			//SetNotification(eventJson.getString("date"), eventJson.getString("startTime"), eventJson.getString("trainingName"));
-																			
-																		/*} catch (JSONException e) {
-																			Log.d("FITNESS", "Hiba történt!!!!!: " + e.getMessage());
-																			e.printStackTrace();
-																		}																		
-																	}
-																}, 
-																new ErrorListener() {
-
-																	@Override
-																	public void onErrorResponse(VolleyError error) {
-																		Log.d("FITNESS", "Error belsõ: " + error.toString());
-																		pDialog.dismiss();
-																		showReservationErrorAlert(true);																		
-																	}
-																});
-														
-														AppController.getInstance().addToRequestQueue(event);*/
 													}
 												} catch (JSONException e) {
 													e.printStackTrace();
@@ -380,63 +347,44 @@ public class ReservationActivity extends ActionBarActivity implements OnNavigati
 	}
 	
 	@SuppressLint("SimpleDateFormat") 
-	private void SetNotification(String date, String startTime, String trainingName) {
+	private void SetNotification(String date, String startTime, String trainingName, int position) {
 		SharedPreferences sharedPrefs = PreferenceManager
                 .getDefaultSharedPreferences(this);
+		final int event_id = timeTable.get(selectedWeekday).get(position).getId();
 		String timerValue = sharedPrefs.getString("pref_key", "NULL");
 		timerValue = timerValue.equals("NULL") ? "2" : timerValue;
 		
-		//Log.d("FITNESS", "Hour1:" + startTime.substring(0, startTime.indexOf(":")));
-		//Log.d("FITNESS", "Minute1:" + startTime.substring(startTime.indexOf(":") + 1, startTime.length()));
 		
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-		//int hour = Integer.parseInt(startTime.substring(0, startTime.indexOf(":")));
-		//int minute = Integer.parseInt(startTime.substring(startTime.indexOf(":") + 1, startTime.length()));
-		
-		//Log.d("FITNESS", "Hour:" + String.valueOf(hour));
-		//Log.d("FITNESS", "Minute:" + String.valueOf(minute));
 		
 		Date reservationDate = null;
 		try {
 			reservationDate = formatter.parse(date + " " + startTime);
-			/*int timerHours = 0;
-			if((hour - Integer.parseInt(timerValue)) < 0) {
-				timerHours = 24 + (hour - Integer.parseInt(timerValue));
-				Calendar cal = Calendar.getInstance();
-				cal.setTime(reservationDate);
-				reservationDate.setDate(cal.get(Calendar.DAY_OF_MONTH) - 1);
-			}
-			else {
-				timerHours = (hour - Integer.parseInt(timerValue));
-			}
-			reservationDate.setHours((timerHours));
-			reservationDate.setMinutes(minute);*/
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
 		
-        //Log.d("FITNESS", "Timer: " + timerValue);
-        //Log.d("FITNESS", "RESERVATIONDATE - TIMER: " + reservationDate.toString());
 		
 		reservationDate.setTime(reservationDate.getTime() - Integer.parseInt(timerValue)*3600000);
 		
 		Log.d("FITNESS", String.valueOf(reservationDate.getTime()));
         
-        //Calendar calendar = Calendar.getInstance();        
-        //calendar.setTime(reservationDate);
-        
-        //Log.d("FITNESS", "CALENDAR: " + String.valueOf(calendar.getTime()));        
-		//Log.d("FITNESS", "TRAININGNAME_OUTSIDE: " + trainingName);
-        
-		//AlarmNotificationHelper.SetMessage("Edzés: " + trainingName + ", Kezdezte: " + startTime);
         AlarmManager alarmManager = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(this, AlarmNotificationReceiver.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         intent.putExtra("NOTI_MESSAGE", "Edzés: " + trainingName + ", Kezdete: " + startTime);
 
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_ONE_SHOT);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, event_id, intent, PendingIntent.FLAG_ONE_SHOT);
         alarmManager.set(AlarmManager.RTC_WAKEUP, reservationDate.getTime(), pendingIntent);
 		
+	}
+	
+	private void DeleteNotification(int position) {
+		final int event_id = timeTable.get(selectedWeekday).get(position).getId();
+		AlarmManager alarmManager = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
+		Intent intent = new Intent(this, AlarmNotificationReceiver.class);
+		PendingIntent pendingIntent = PendingIntent.getBroadcast(this, event_id, intent, PendingIntent.FLAG_ONE_SHOT);
+        alarmManager.cancel(pendingIntent);
 	}
 	
 	@Override

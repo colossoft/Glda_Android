@@ -25,19 +25,12 @@ public class AlarmNotificationReceiver extends BroadcastReceiver {
 		
 	    PendingIntent pendingIntent =PendingIntent.getActivity(ctx, 0, new Intent(ctx, StartScreenPickerActivity.class), 0);
 
-		//Log.d("FITNESS", "TRAININGNAME_INSIDE: " + message);
 		Notification notification = new Notification(R.drawable.ic_launcher,text, when);
 		notification.setLatestEventInfo(ctx, "GildaMax", message, pendingIntent);
 
 	    long[] vibrate = {0,2000};
 	    notification.vibrate = vibrate;
 	    notification.sound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-
-	    //notification.ledARGB = Color.RED;
-	    //notification.ledOffMS = 300;
-	    //notification.ledOnMS = 300;
-
-	    //notification.defaults |= Notification.DEFAULT_LIGHTS;
 	    
 	    notificationManager.notify(0, notification);		
 	}

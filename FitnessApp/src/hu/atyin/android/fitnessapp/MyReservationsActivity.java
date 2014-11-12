@@ -1,6 +1,7 @@
 package hu.atyin.android.fitnessapp;
 
 import hu.atyin.android.fitnessapp.adapter.MyReservationsAdapter;
+import hu.atyin.android.fitnessapp.adapter.MyReservationsAdapter.IRefreshMyReservations;
 import hu.atyin.android.fitnessapp.model.Reservation;
 import hu.atyin.android.fitnessapp.session.SessionManager;
 import hu.atyin.android.fitnessapp.volley.AppController;
@@ -34,7 +35,7 @@ import com.android.volley.Response.ErrorListener;
 import com.android.volley.Response.Listener;
 import com.android.volley.VolleyError;
 
-public class MyReservationsActivity extends ActionBarActivity {
+public class MyReservationsActivity extends ActionBarActivity implements IRefreshMyReservations {
 	
 	private ListView myReservationsList;
 	private MyReservationsAdapter myReservationsListAdapter;
@@ -49,10 +50,8 @@ public class MyReservationsActivity extends ActionBarActivity {
 	
 	private HashMap<String, String> userDetails;
 	
-	String tag_delete_reservation_json_obj = "delete_reservation_json_obj_req";
 	String tag_get_reservations_json_obj = "get_reservations_json_obj_req";
 	
-	private CustomJsonRequest deleteReservationJsonObjReq;
 	private CustomJsonRequest getReservationsJsonObjReq;
 
 	@Override
@@ -107,6 +106,8 @@ public class MyReservationsActivity extends ActionBarActivity {
 						pDialog.dismiss();
 						
 						try {
+							myReservations.clear();
+							
 							JSONArray myReservationsJsonArray = response.getJSONArray("reservations");
 							
 							if(myReservationsJsonArray.length() == 0) {
@@ -143,6 +144,8 @@ public class MyReservationsActivity extends ActionBarActivity {
 				new ErrorListener() {
 					@Override
 					public void onErrorResponse(VolleyError error) {
+						pDialog.dismiss();
+						
 						new AlertDialog.Builder(MyReservationsActivity.this).setTitle(R.string.app_error_title).setMessage(error.getMessage())
 							.setNegativeButton(R.string.app_btnBack_Title, new OnClickListener() {
 								@Override
@@ -178,5 +181,15 @@ public class MyReservationsActivity extends ActionBarActivity {
 		}
 		
 		return super.onOptionsItemSelected(item);
+	}
+
+	@Override
+	public void refreshMyReservations() {
+		pDialog = new ProgressDialog(MyReservationsActivity.this);
+		pDialog.setCancelable(false);
+		pDialog.setMessage(getString(R.string.app_my_reservations_downloadingReservations));
+		pDialog.show();
+		
+		AppController.getInstance().addToRequestQueue(getReservationsJsonObjReq, tag_get_reservations_json_obj);
 	}
 }

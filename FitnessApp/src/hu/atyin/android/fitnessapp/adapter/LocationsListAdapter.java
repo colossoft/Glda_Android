@@ -60,7 +60,7 @@ public class LocationsListAdapter extends ArrayAdapter<FitnessLocation> {
 		
 		holder.tvFitnessName.setText(fitnessLocation.getName());
 		holder.tvFitnessAddress.setText(fitnessLocation.getAddress());
-		holder.tvFitnessDistance.setText(String.format("%.1f km", fitnessLocation.getDistance()));
+		holder.tvFitnessDistance.setText(String.format("%.1f " + context.getString(R.string.app_location_km), fitnessLocation.getDistance()));
 		
 		holder.imgNextArrow.setOnClickListener(new OnClickListener() {
 			@Override

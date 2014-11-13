@@ -89,7 +89,7 @@
             android:textColor="#ce3334"
             android:textSize="16sp"
             android:textStyle="italic|bold"
-            android:text="Foglalás:" />
+            android:text="@string/app_reservation_rowTitle" />
         
         <ImageView 
 	        android:id="@+id/imgIsReserved"

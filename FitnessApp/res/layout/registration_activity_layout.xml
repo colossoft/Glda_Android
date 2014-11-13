@@ -99,7 +99,7 @@
 	        android:background="@null"
 	        android:padding="5dp"
 	        android:textColor="#4d4d4e"
-	        android:hint="@string/app_login_emailBtnText" />
+	        android:hint="@string/app_login_emailEdHint" />
 	    
 	    <TextView 
 	        android:layout_width="match_parent"
@@ -119,7 +119,7 @@
 	        android:background="@null"
 	        android:padding="5dp"
 	        android:textColor="#4d4d4e"
-	        android:hint="@string/app_login_passwordLabel" />
+	        android:hint="@string/app_login_passwordEdHint" />
 	    
 	    <TextView 
 	        android:layout_width="match_parent"

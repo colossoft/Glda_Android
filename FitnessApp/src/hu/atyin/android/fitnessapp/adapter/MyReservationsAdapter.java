@@ -4,6 +4,7 @@ import hu.atyin.android.fitnessapp.MyReservationsActivity;
 import hu.atyin.android.fitnessapp.R;
 import hu.atyin.android.fitnessapp.model.Reservation;
 import hu.atyin.android.fitnessapp.session.SessionManager;
+import hu.atyin.android.fitnessapp.volley.AlarmNotificationReceiver;
 import hu.atyin.android.fitnessapp.volley.AppController;
 import hu.atyin.android.fitnessapp.volley.CustomJsonRequest;
 import hu.atyin.android.fitnessapp.volley.UrlCollection;
@@ -16,10 +17,13 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.app.Activity;
+import android.app.AlarmManager;
 import android.app.AlertDialog;
+import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -128,7 +132,7 @@ public class MyReservationsAdapter extends ArrayAdapter<Reservation> {
 							
 							Map<String, String> params = new HashMap<String, String>();
 							
-							deleteReservationJsonObjReq = new CustomJsonRequest(Method.DELETE, UrlCollection.DELETE_RESERVATION_URL + reservation.getId(), params, headers, 
+							deleteReservationJsonObjReq = new CustomJsonRequest(context, Method.DELETE, UrlCollection.DELETE_RESERVATION_URL + reservation.getId(), params, headers, 
 									new Listener<JSONObject>() {
 										@Override
 										public void onResponse(JSONObject response) {
@@ -140,6 +144,7 @@ public class MyReservationsAdapter extends ArrayAdapter<Reservation> {
 													@Override
 													public void onClick(DialogInterface dialog, int which) {
 														dialog.dismiss();
+														DeleteNotification(context, reservation.getId());
 														rmsListener.refreshMyReservations();
 													}
 												}).show();
@@ -179,6 +184,13 @@ public class MyReservationsAdapter extends ArrayAdapter<Reservation> {
 		});
 		
 		return rowView;
+	}
+	
+	private void DeleteNotification(Context ctx, int event_id) {
+		AlarmManager alarmManager = (AlarmManager) ctx.getSystemService(Context.ALARM_SERVICE);
+		Intent intent = new Intent(ctx, AlarmNotificationReceiver.class);
+		PendingIntent pendingIntent = PendingIntent.getBroadcast(ctx, event_id, intent, PendingIntent.FLAG_ONE_SHOT);
+        alarmManager.cancel(pendingIntent);
 	}
 	
 	public interface IRefreshMyReservations {

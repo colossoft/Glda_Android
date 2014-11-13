@@ -18,6 +18,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -29,7 +30,6 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.location.Location;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
@@ -118,7 +118,7 @@ public class LocationsActivity extends ActionBarActivity {
 							}
 						}
 						else {
-							Toast.makeText(LocationsActivity.this, "Pozíció lekérése sikertelen!", Toast.LENGTH_LONG).show();
+							Toast.makeText(LocationsActivity.this, getString(R.string.app_location_positionGetFailed), Toast.LENGTH_LONG).show();
 						}
 						
 						pDialog.dismiss();
@@ -154,7 +154,7 @@ public class LocationsActivity extends ActionBarActivity {
 		actionbar = getSupportActionBar();
 		
 		// Actionbar cím beállítása
-		actionbar.setTitle("Gilda Max Fitness");
+		actionbar.setTitle(R.string.app_location_actionbarTitle);
 		
 		// Actionbar háttér beállítás
 		actionbar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#ce3334")));
@@ -176,14 +176,19 @@ public class LocationsActivity extends ActionBarActivity {
 		}
 		
 		// Helyszínek letöltése
-		pDialog.setMessage("Helyszínek letöltése...");
+		pDialog.setMessage(getString(R.string.app_location_loadingLocationsTitle));
 		pDialog.show();
 		
 		Map<String, String> headers = new HashMap<String, String>();
 		Map<String, String> params = new HashMap<String, String>();
 		headers.put("Authorization", userDetails.get("api_key"));
+		SharedPreferences prefs = getSharedPreferences("CommonPrefs", Activity.MODE_PRIVATE);
+		String settedValue = prefs.getString("Language", null);
+		if(settedValue != null) {
+			headers.put("Accept-Language", settedValue);
+		}
 		
-		locationsJsonObjReq = new CustomJsonRequest(Method.GET, UrlCollection.GET_ALL_LOCATION_URL, params, headers, 
+		locationsJsonObjReq = new CustomJsonRequest(LocationsActivity.this, Method.GET, UrlCollection.GET_ALL_LOCATION_URL, params, headers, 
 				new Listener<JSONObject>() {
 					@Override
 					public void onResponse(JSONObject response) {
@@ -191,40 +196,33 @@ public class LocationsActivity extends ActionBarActivity {
 						pDialog.dismiss();
 						
 						try {
-							if(response.getBoolean("error")) {
-								showErrorAlert();
+							JSONArray locationsJsonArray = response.getJSONArray("locations");
+							
+							for (int i = 0; i < locationsJsonArray.length(); i++) {
+								JSONObject act = locationsJsonArray.getJSONObject(i);
+								
+								fitnessLocations.add(new FitnessLocation(act.getInt("id"), 
+																		 act.getString("name"), 
+																		 act.getString("address"), 
+																		 act.getDouble("latitude"), 
+																		 act.getDouble("longitude"), 
+																		 0.0));
 							}
-							else {
-								JSONArray locationsJsonArray = response.getJSONArray("locations");
-								
-								for (int i = 0; i < locationsJsonArray.length(); i++) {
-									JSONObject act = locationsJsonArray.getJSONObject(i);
-									
-									fitnessLocations.add(new FitnessLocation(act.getInt("id"), 
-																			 act.getString("name"), 
-																			 act.getString("address"), 
-																			 act.getDouble("latitude"), 
-																			 act.getDouble("longitude"), 
-																			 0.0));
-								}
-								
-								if(!getLocationDatas()) {
-									pDialog.dismiss();
-									Toast.makeText(LocationsActivity.this, "Pozíció lekérése sikertelen!", Toast.LENGTH_LONG).show();
-									setListElements();
-								}
+							
+							if(!getLocationDatas()) {
+								pDialog.dismiss();
+								Toast.makeText(LocationsActivity.this, R.string.app_location_positionGetFailed, Toast.LENGTH_LONG).show();
+								setListElements();
 							}
 						} catch (JSONException e) {
 							e.printStackTrace();
-							showErrorAlert();
 						}
 					}
 				}, new ErrorListener() {
 					@Override
 					public void onErrorResponse(VolleyError error) {
-						Log.d("FITNESS", "Error: " + error.getMessage());
 						pDialog.dismiss();
-						showErrorAlert();
+						showErrorAlert(error.getMessage());
 					}
 				});
 		
@@ -265,19 +263,18 @@ public class LocationsActivity extends ActionBarActivity {
 		logoutUser();
 	}
 	
-	public void showErrorAlert() {
-		new AlertDialog.Builder(LocationsActivity.this).setTitle("Hiba")
-		.setMessage("Sajnos nem sikerült letölteni a helyszíneket!")
-			.setNegativeButton("Kilépés", new OnClickListener() {
+	public void showErrorAlert(String messageText) {
+		new AlertDialog.Builder(LocationsActivity.this).setTitle(R.string.app_error_title).setMessage(messageText)
+			.setNegativeButton(R.string.app_btnExit_Title, new OnClickListener() {
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
 					session.logoutUser();
 				}
 			})
-			.setPositiveButton("Újra", new OnClickListener() {
+			.setPositiveButton(R.string.app_btnAgain_Title, new OnClickListener() {
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
-					pDialog.setMessage("Helyszínek letöltése...");
+					pDialog.setMessage(getString(R.string.app_location_loadingLocationsTitle));
 					pDialog.show();
 					
 					AppController.getInstance().addToRequestQueue(locationsJsonObjReq, tag_locations_json_obj);
@@ -297,10 +294,10 @@ public class LocationsActivity extends ActionBarActivity {
 
 	
 	private void logoutUser() {
-		new AlertDialog.Builder(LocationsActivity.this).setTitle("Kijelentkezés")
+		new AlertDialog.Builder(LocationsActivity.this).setTitle(R.string.app_logout_title)
 		.setMessage(R.string.app_location_quitQuestion)
-		.setNegativeButton("Nem", null)
-		.setPositiveButton("Igen", new OnClickListener() {
+		.setNegativeButton(R.string.app_btnNo_Title, null)
+		.setPositiveButton(R.string.app_btnYesTitle, new OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				session.logoutUser();
@@ -309,34 +306,8 @@ public class LocationsActivity extends ActionBarActivity {
 	}
 	
 	private void setting(){
-		Intent settingIntetn = new Intent(getApplicationContext(), SettingActivity.class);		
-		//startActivity(settingIntetn);
-		startActivityForResult(settingIntetn, RESULT_SETTINGS);
-	}
-	
-	@Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
- 
-        switch (requestCode) {
-        case RESULT_SETTINGS:
-            showSettingResult();
-            break;
- 
-        }
- 
-    }
-	
-	private void showSettingResult() {
-        SharedPreferences sharedPrefs = PreferenceManager
-                .getDefaultSharedPreferences(this);
- 
-        StringBuilder builder = new StringBuilder();
- 
-        builder.append("\n Timer: "
-                + sharedPrefs.getString("pref_key", "NULL"));
-        
-        Log.d("FITNESS", builder.toString());
+		Intent settingIntent = new Intent(getApplicationContext(), SettingActivity.class);
+		startActivity(settingIntent);
 	}
 	
 	private void initializeMap() {
@@ -345,14 +316,14 @@ public class LocationsActivity extends ActionBarActivity {
 			
 			if (googleMap == null) {
                 Toast.makeText(getApplicationContext(),
-                        "Sajnos nem sikerült betölteni a térképet!", Toast.LENGTH_LONG)
+                        getString(R.string.app_location_mapLoadingFailed), Toast.LENGTH_LONG)
                         .show();
             }
 		}
 	}
 	
 	public boolean getLocationDatas() {
-		pDialog.setMessage("Saját pozíció meghatározása...");
+		pDialog.setMessage(getString(R.string.app_location_findingPosition));
 		pDialog.setCancelable(false);
 		pDialog.show();
 		
@@ -391,7 +362,8 @@ public class LocationsActivity extends ActionBarActivity {
 
 		private final View myInfoWindowView;
 		
-		@SuppressLint("InflateParams") public MyInfoWindowAdapter() {
+		@SuppressLint("InflateParams")
+		public MyInfoWindowAdapter() {
 			myInfoWindowView = getLayoutInflater().inflate(R.layout.infowindow_layout, null);
 		}
 		

@@ -18,9 +18,7 @@ public class StartActivity extends Activity {
 	private Button btnLanguagePicker;
 	private Button btnSignUp;
 	private Button btnLogin;
-	
-	//private static String [] languages = {"Magyar", "English", "Deutsch"};
-	
+		
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
         

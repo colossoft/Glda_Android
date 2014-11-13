@@ -20,7 +20,7 @@ public class AlarmNotificationReceiver extends BroadcastReceiver {
 		NotificationManager notificationManager = 
 				(NotificationManager) ctx.getSystemService(Context.NOTIFICATION_SERVICE);
 
-		CharSequence text = "Önnek edzése lesz!";
+		CharSequence text = ctx.getString(R.string.app_notification_notiTitle);
 		long when = System.currentTimeMillis();
 		
 	    PendingIntent pendingIntent =PendingIntent.getActivity(ctx, 0, new Intent(ctx, StartScreenPickerActivity.class), 0);

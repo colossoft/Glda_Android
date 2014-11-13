@@ -15,11 +15,13 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -97,14 +99,19 @@ public class RoomSelectionActivity extends ActionBarActivity {
 		// Termek letöltése
 		pDialog = new ProgressDialog(RoomSelectionActivity.this);
 		pDialog.setCancelable(false);
-		pDialog.setMessage("Termek letöltése...");
+		pDialog.setMessage(getString(R.string.app_room_loadingRoomsTitle));
 		pDialog.show();
 		
 		Map<String, String> headers = new HashMap<String, String>();
 		Map<String, String> params = new HashMap<String, String>();
 		headers.put("Authorization", userDetails.get("api_key"));
+		SharedPreferences prefs = getSharedPreferences("CommonPrefs", Activity.MODE_PRIVATE);
+		String settedValue = prefs.getString("Language", null);
+		if(settedValue != null) {
+			headers.put("Accept-Language", settedValue);
+		}
 		
-		roomsJsonObjReq = new CustomJsonRequest(Method.GET, UrlCollection.GET_ROOMS_URL + gymId, params, headers, 
+		roomsJsonObjReq = new CustomJsonRequest(RoomSelectionActivity.this, Method.GET, UrlCollection.GET_ROOMS_URL + gymId, params, headers, 
 				new Listener<JSONObject>() {
 					@Override
 					public void onResponse(JSONObject response) {
@@ -112,33 +119,26 @@ public class RoomSelectionActivity extends ActionBarActivity {
 						pDialog.dismiss();
 						
 						try {
-							if(response.getBoolean("error")) {
-								showErrorAlert();
-							}
-							else {
-								JSONArray roomsJsonArray = response.getJSONArray("rooms");
+							JSONArray roomsJsonArray = response.getJSONArray("rooms");
+							
+							for (int i = 0; i < roomsJsonArray.length(); i++) {
+								JSONObject act = roomsJsonArray.getJSONObject(i);
 								
-								for (int i = 0; i < roomsJsonArray.length(); i++) {
-									JSONObject act = roomsJsonArray.getJSONObject(i);
-									
-									rooms.add(new FitnessRoom(act.getInt("id"), act.getString("name")));
-								}
-								
-								roomsAdapter = new RoomListAdapter(RoomSelectionActivity.this, R.layout.trainings_row_layout, rooms);
-								roomsList.setAdapter(roomsAdapter);
+								rooms.add(new FitnessRoom(act.getInt("id"), act.getString("name")));
 							}
+							
+							roomsAdapter = new RoomListAdapter(RoomSelectionActivity.this, R.layout.trainings_row_layout, rooms);
+							roomsList.setAdapter(roomsAdapter);
 						} catch (JSONException e) {
 							e.printStackTrace();
-							showErrorAlert();
 						}
 					}
 				}, 
 				new ErrorListener() {
 					@Override
 					public void onErrorResponse(VolleyError error) {
-						Log.d("FITNESS", "Error: " + error.getMessage());
 						pDialog.dismiss();
-						showErrorAlert();
+						showErrorAlert(error.getMessage());
 					}
 				});
 		
@@ -172,19 +172,19 @@ public class RoomSelectionActivity extends ActionBarActivity {
 		return super.onOptionsItemSelected(item);
 	}
 	
-	public void showErrorAlert() {
-		new AlertDialog.Builder(RoomSelectionActivity.this).setTitle("Hiba").setMessage("Sajnos nem sikerült letölteni a termeket!")
-			.setNegativeButton("Vissza", new OnClickListener() {
+	public void showErrorAlert(String messageText) {
+		new AlertDialog.Builder(RoomSelectionActivity.this).setTitle(getString(R.string.app_error_title)).setMessage(messageText)
+			.setNegativeButton(R.string.app_btnBack_Title, new OnClickListener() {
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
 					dialog.dismiss();
 					finish();
 				}
 			})
-			.setPositiveButton("Újra", new OnClickListener() {
+			.setPositiveButton(R.string.app_btnAgain_Title, new OnClickListener() {
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
-					pDialog.setMessage("Termek letöltése...");
+					pDialog.setMessage(getString(R.string.app_room_loadingRoomsTitle));
 					pDialog.show();
 					
 					AppController.getInstance().addToRequestQueue(roomsJsonObjReq, tag_rooms_json_obj);

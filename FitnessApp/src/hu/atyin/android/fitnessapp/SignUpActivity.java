@@ -14,6 +14,7 @@ import org.json.JSONObject;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -80,34 +81,40 @@ public class SignUpActivity extends Activity {
 				final String passwordAgain = edPasswordAgain.getText().toString();
 				
 				if(firstName.trim().length() == 0) {
-					new AlertDialog.Builder(SignUpActivity.this).setTitle("Regisztráció").setMessage("Add meg a keresztneved!").setNeutralButton("OK", null).show();
+					new AlertDialog.Builder(SignUpActivity.this).setTitle(R.string.app_registration_title).setMessage(R.string.app_registration_firstNameInvalid).setNeutralButton("OK", null).show();
 				}
 				else if(lastName.trim().length() == 0) {
-					new AlertDialog.Builder(SignUpActivity.this).setTitle("Regisztráció").setMessage("Add meg a vezetékneved!").setNeutralButton("OK", null).show();
+					new AlertDialog.Builder(SignUpActivity.this).setTitle(R.string.app_registration_title).setMessage(R.string.app_registration_lastNameInvalid).setNeutralButton("OK", null).show();
 				}
 				else if(email.trim().length() == 0) {
-					new AlertDialog.Builder(SignUpActivity.this).setTitle("Regisztráció").setMessage("Add meg az e-mail címed!").setNeutralButton("OK", null).show();
+					new AlertDialog.Builder(SignUpActivity.this).setTitle(R.string.app_registration_title).setMessage(R.string.app_registration_emailInvalid).setNeutralButton("OK", null).show();
 				}
 				else if(password.trim().length() == 0) {
-					new AlertDialog.Builder(SignUpActivity.this).setTitle("Regisztráció").setMessage("Add meg a jelszót!").setNeutralButton("OK", null).show();
+					new AlertDialog.Builder(SignUpActivity.this).setTitle(R.string.app_registration_title).setMessage(R.string.app_registration_PasswordInvalid).setNeutralButton("OK", null).show();
 				}
 				else if(!password.trim().equals(passwordAgain.trim())) {
-					new AlertDialog.Builder(SignUpActivity.this).setTitle("Regisztráció").setMessage("A megadott jelszavak nem egyeznek!").setNeutralButton("OK", null).show();
+					new AlertDialog.Builder(SignUpActivity.this).setTitle(R.string.app_registration_title).setMessage(R.string.app_registration_passwordsInvalid).setNeutralButton("OK", null).show();
 				}
 				else {
 					pDialog = new ProgressDialog(SignUpActivity.this);
 					pDialog.setCancelable(false);
-					pDialog.setMessage("Regisztráció...");
+					pDialog.setMessage(getString(R.string.app_registration_regInProgressTitle));
 					pDialog.show();
 					
 					Map<String, String> headers = new HashMap<String, String>();
+					SharedPreferences prefs = getSharedPreferences("CommonPrefs", Activity.MODE_PRIVATE);
+					String settedValue = prefs.getString("Language", null);
+					if(settedValue != null) {
+						headers.put("Accept-Language", settedValue);
+					}
+					
 					Map<String, String> params = new HashMap<String, String>();
 					params.put("first_name", firstName);
 					params.put("last_name", lastName);
 					params.put("email", email);
 					params.put("password", password);
 					
-					CustomJsonRequest regJsonObjReq = new CustomJsonRequest(Method.POST, UrlCollection.REGISTER_URL, params, headers, 
+					CustomJsonRequest regJsonObjReq = new CustomJsonRequest(SignUpActivity.this, Method.POST, UrlCollection.REGISTER_URL, params, headers, 
 							new Listener<JSONObject>() {
 								@Override
 								public void onResponse(JSONObject response) {
@@ -115,27 +122,20 @@ public class SignUpActivity extends Activity {
 									pDialog.dismiss();
 									
 									try {
-										if(response.getBoolean("error")) {
-											new AlertDialog.Builder(SignUpActivity.this).setTitle("Regisztráció").setMessage(response.getString("message")).setNeutralButton("OK", null).show();
-										}
-										else {
-											session.createLoginSession( firstName, 
-																		lastName, 
-																		email, 
-																		response.getString("api_key") );
-										}
+										session.createLoginSession( firstName, 
+																	lastName, 
+																	email, 
+																	response.getString("api_key") );
 									} catch (JSONException e) {
 										e.printStackTrace();
-										new AlertDialog.Builder(SignUpActivity.this).setTitle("Regisztráció").setMessage("A regisztráció sikertelen! Kérjük próbáld újra!").setNeutralButton("OK", null).show();
 									}
 								}
 							}, 
 							new ErrorListener() {
 								@Override
 								public void onErrorResponse(VolleyError error) {
-									Log.d("FITNESS", "Error: " + error.getMessage());
 									pDialog.dismiss();
-									new AlertDialog.Builder(SignUpActivity.this).setTitle("Regisztráció").setMessage("A regisztráció sikertelen! Kérjük próbáld újra!").setNeutralButton("OK", null).show();
+									new AlertDialog.Builder(SignUpActivity.this).setTitle(R.string.app_registration_title).setMessage(error.getMessage()).setNeutralButton("OK", null).show();
 								}
 							});
 					

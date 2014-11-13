@@ -99,7 +99,7 @@ public class MyReservationsActivity extends ActionBarActivity implements IRefres
 		
 		Map<String, String> params = new HashMap<String, String>();
 		
-		getReservationsJsonObjReq = new CustomJsonRequest(Method.GET, UrlCollection.GET_RESERVATIONS_OF_USER_URL, params, headers, 
+		getReservationsJsonObjReq = new CustomJsonRequest(MyReservationsActivity.this, Method.GET, UrlCollection.GET_RESERVATIONS_OF_USER_URL, params, headers, 
 				new Listener<JSONObject>() {
 					@Override
 					public void onResponse(JSONObject response) {

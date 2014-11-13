@@ -6,7 +6,6 @@ INDEX VERSION 1.126+D:\cuccok\gilda_cuccok\Glda_Android_project\Glda_Android\.me
 3515282563.index
 2220048076.index
 3206949501.index
-410514044.index
 848856923.index
 1322921417.index
 3425425728.index

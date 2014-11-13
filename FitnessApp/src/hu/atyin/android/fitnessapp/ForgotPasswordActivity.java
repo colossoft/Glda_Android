@@ -62,7 +62,7 @@ public class ForgotPasswordActivity extends Activity {
 				final String email = edEmail.getText().toString();
 				
 				if(email.trim().length() == 0) {
-					new AlertDialog.Builder(ForgotPasswordActivity.this).setTitle(getString(R.string.app_forgot_password_title)).setMessage(R.string.app_forgot_password_missingEmailAddress).setNeutralButton("OK", null).show();
+					new AlertDialog.Builder(ForgotPasswordActivity.this).setTitle(getString(R.string.app_forgot_password_title)).setMessage(R.string.app_registration_emailInvalid).setNeutralButton("OK", null).show();
 				}
 				else {
 					pDialog = new ProgressDialog(ForgotPasswordActivity.this);
@@ -80,7 +80,7 @@ public class ForgotPasswordActivity extends Activity {
 					Map<String, String> params = new HashMap<String, String>();
 					params.put("email", email);
 					
-					CustomJsonRequest forgotPasswordJsonObjReq = new CustomJsonRequest(Method.POST, UrlCollection.FORGOT_PASSWORD_URL, params, headers, 
+					CustomJsonRequest forgotPasswordJsonObjReq = new CustomJsonRequest(ForgotPasswordActivity.this, Method.POST, UrlCollection.FORGOT_PASSWORD_URL, params, headers, 
 							new Listener<JSONObject>() {
 								@Override
 								public void onResponse(JSONObject response) {

@@ -77,15 +77,15 @@ public class LoginActivity extends Activity {
 				Log.d("FITNESS", password);
 				
 				if(email.trim().length() == 0) {
-					new AlertDialog.Builder(LoginActivity.this).setTitle("Bejelentkezés").setMessage("Add meg az e-mail címet!").setNeutralButton("OK", null).show();
+					new AlertDialog.Builder(LoginActivity.this).setTitle(getString(R.string.app_login_login)).setMessage(getString(R.string.app_registration_emailInvalid)).setNeutralButton("OK", null).show();
 				}
 				else if(password.trim().length() == 0) {
-					new AlertDialog.Builder(LoginActivity.this).setTitle("Bejelentkezés").setMessage("Add meg a jelszót!").setNeutralButton("OK", null).show();
+					new AlertDialog.Builder(LoginActivity.this).setTitle(getString(R.string.app_login_login)).setMessage(getString(R.string.app_registration_PasswordInvalid)).setNeutralButton("OK", null).show();
 				}
 				else {
 					pDialog = new ProgressDialog(LoginActivity.this);
 					pDialog.setCancelable(false);
-					pDialog.setMessage("Bejelentkezés...");
+					pDialog.setMessage(getString(R.string.app_login_loginInProgressTitle));
 					pDialog.show();
 					
 					Map<String, String> headers = new HashMap<String, String>();
@@ -99,7 +99,7 @@ public class LoginActivity extends Activity {
 					params.put("email", email);
 					params.put("password", password);
 					
-					CustomJsonRequest loginJsonObjReq = new CustomJsonRequest(Method.POST, UrlCollection.LOGIN_URL, params, headers, 
+					CustomJsonRequest loginJsonObjReq = new CustomJsonRequest(LoginActivity.this, Method.POST, UrlCollection.LOGIN_URL, params, headers, 
 							new Listener<JSONObject>() {
 								@Override
 								public void onResponse(JSONObject response) {
@@ -113,7 +113,6 @@ public class LoginActivity extends Activity {
 																	response.getString("api_key") );
 									} catch (JSONException e) {
 										e.printStackTrace();
-										new AlertDialog.Builder(LoginActivity.this).setTitle("Bejelentkezés").setMessage("A bejelentkezés sikertelen! Kérjük próbáld újra!").setNeutralButton("OK", null).show();
 									}
 								}
 							}, 
@@ -121,7 +120,7 @@ public class LoginActivity extends Activity {
 								@Override
 								public void onErrorResponse(VolleyError error) {
 									pDialog.dismiss();
-									new AlertDialog.Builder(LoginActivity.this).setTitle("Bejelentkezés").setMessage(error.getMessage()).setNeutralButton("OK", null).show();
+									new AlertDialog.Builder(LoginActivity.this).setTitle(getString(R.string.app_login_login)).setMessage(error.getMessage()).setNeutralButton("OK", null).show();
 								}
 							}
 					);

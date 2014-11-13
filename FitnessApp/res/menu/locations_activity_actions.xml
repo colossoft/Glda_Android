@@ -4,22 +4,22 @@
      
     <item android:id="@+id/action_my_reservations"
           android:icon="@drawable/ic_action_settings"
-          android:title="Foglalásaim"
+          android:title="@string/app_my_reservations_title"
           fitnessapp:showAsAction="never" />
     
     <item android:id="@+id/action_change_password"
           android:icon="@drawable/ic_action_settings"
-          android:title="Jelszó módosítása"
+          android:title="@string/app_change_password_title"
           fitnessapp:showAsAction="never" />
     
     <item android:id="@+id/action_setting" 
           android:icon="@drawable/ic_action_settings"
-		  android:title="Beállítások"
-		  fitnessapp:showAsAction="never" />"
+		  android:title="@string/app_menu_settings"
+		  fitnessapp:showAsAction="never" />
     
     <item android:id="@+id/action_logout"
           android:icon="@drawable/ic_action_directions"
-          android:title="Kijelentkezés"
+          android:title="@string/app_logout_title"
           fitnessapp:showAsAction="never" />
     
 </menu>

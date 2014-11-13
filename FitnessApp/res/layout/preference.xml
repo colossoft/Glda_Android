@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <PreferenceCategory android:title="@string/app_setting_title">
-      <ListPreference
-        android:key="pref_key"
-        android:title="@string/pref_title"
-        android:summary="@string/pref_summary"
-        android:entries="@array/prefValues"
-        android:entryValues="@array/prefValues"
-        android:defaultValue="@string/pref_default">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent" >
 
+    <PreferenceCategory android:title="@string/app_setting_title" >
+
+        <ListPreference
+            android:defaultValue="@string/pref_default"
+            android:entries="@array/prefValues"
+            android:entryValues="@array/prefValues"
+            android:key="pref_key"
+            android:summary="@string/pref_summary"
+            android:title="@string/pref_title" >
         </ListPreference>
-        </PreferenceCategory>
+        
+    </PreferenceCategory>
 
 </PreferenceScreen>

@@ -123,7 +123,7 @@ public class ChangePasswordActivity extends ActionBarActivity {
 					params.put("newPassword", newPass);
 					params.put("confirmNewPassword", newPassAgain);
 					
-					changePasswordJsonObjReq = new CustomJsonRequest(Method.PUT, UrlCollection.CHANGE_PASSWORD_URL, params, headers, 
+					changePasswordJsonObjReq = new CustomJsonRequest(ChangePasswordActivity.this, Method.PUT, UrlCollection.CHANGE_PASSWORD_URL, params, headers, 
 							new Listener<JSONObject>() {
 								@Override
 								public void onResponse(JSONObject response) {

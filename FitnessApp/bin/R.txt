@@ -546,7 +546,6 @@ int string app_location_mapLoadingFailed 0x7f0a0077
 int string app_location_positionGetFailed 0x7f0a0074
 int string app_location_quitQuestion 0x7f0a0073
 int string app_login_cancalBtnText 0x7f0a0038
-int string app_login_emailBtnText 0x7f0a007d
 int string app_login_emailEdHint 0x7f0a0039
 int string app_login_entryBtnText 0x7f0a003d
 int string app_login_forgotPasswordBtnTitle 0x7f0a003f
@@ -555,7 +554,6 @@ int string app_login_login 0x7f0a0037
 int string app_login_loginBtnText 0x7f0a003b
 int string app_login_loginInProgressTitle 0x7f0a0040
 int string app_login_passwordEdHint 0x7f0a003a
-int string app_login_passwordLabel 0x7f0a007e
 int string app_login_registrationLabel 0x7f0a003c
 int string app_logout_title 0x7f0a002f
 int string app_menu_settings 0x7f0a002c
@@ -591,7 +589,6 @@ int string app_reservation_spinner_sunday 0x7f0a006e
 int string app_reservation_spinner_thursday 0x7f0a006b
 int string app_reservation_spinner_tuesday 0x7f0a0069
 int string app_reservation_spinner_wednesday 0x7f0a006a
-int string app_reservation_successfulReservation 0x7f0a007f
 int string app_reservation_sureToReserveQuestion 0x7f0a0066
 int string app_reservation_titleText 0x7f0a0062
 int string app_room_loadingRoomsTitle 0x7f0a007b

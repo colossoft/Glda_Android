@@ -1558,7 +1558,6 @@ containing a value of this type.
         public static final int app_location_positionGetFailed=0x7f0a0074;
         public static final int app_location_quitQuestion=0x7f0a0073;
         public static final int app_login_cancalBtnText=0x7f0a0038;
-        public static final int app_login_emailBtnText=0x7f0a007d;
         public static final int app_login_emailEdHint=0x7f0a0039;
         public static final int app_login_entryBtnText=0x7f0a003d;
         public static final int app_login_forgotPasswordBtnTitle=0x7f0a003f;
@@ -1567,7 +1566,6 @@ containing a value of this type.
         public static final int app_login_loginBtnText=0x7f0a003b;
         public static final int app_login_loginInProgressTitle=0x7f0a0040;
         public static final int app_login_passwordEdHint=0x7f0a003a;
-        public static final int app_login_passwordLabel=0x7f0a007e;
         public static final int app_login_registrationLabel=0x7f0a003c;
         public static final int app_logout_title=0x7f0a002f;
         public static final int app_menu_settings=0x7f0a002c;
@@ -1603,7 +1601,6 @@ containing a value of this type.
         public static final int app_reservation_spinner_thursday=0x7f0a006b;
         public static final int app_reservation_spinner_tuesday=0x7f0a0069;
         public static final int app_reservation_spinner_wednesday=0x7f0a006a;
-        public static final int app_reservation_successfulReservation=0x7f0a007f;
         public static final int app_reservation_sureToReserveQuestion=0x7f0a0066;
         public static final int app_reservation_titleText=0x7f0a0062;
         public static final int app_room_loadingRoomsTitle=0x7f0a007b;

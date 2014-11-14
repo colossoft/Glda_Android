@@ -170,7 +170,7 @@ public class LocationsActivity extends ActionBarActivity {
         }
 		
 		if(googleMap != null) {
-			googleMap.setMyLocationEnabled(true);
+			//googleMap.setMyLocationEnabled(true);
 			googleMap.getUiSettings().setZoomControlsEnabled(false);
 			googleMap.setInfoWindowAdapter(new MyInfoWindowAdapter());
 		}
@@ -209,11 +209,11 @@ public class LocationsActivity extends ActionBarActivity {
 																		 0.0));
 							}
 							
-							if(!getLocationDatas()) {
-								pDialog.dismiss();
-								Toast.makeText(LocationsActivity.this, R.string.app_location_positionGetFailed, Toast.LENGTH_LONG).show();
+							//if(!getLocationDatas()) {
+							//	pDialog.dismiss();
+							//	Toast.makeText(LocationsActivity.this, R.string.app_location_positionGetFailed, Toast.LENGTH_LONG).show();
 								setListElements();
-							}
+							//}
 						} catch (JSONException e) {
 							e.printStackTrace();
 						}

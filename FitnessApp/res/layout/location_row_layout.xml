@@ -48,7 +48,8 @@
             android:textColor="#4d4d4e"
             android:textStyle="italic"
             android:lines="1"
-            android:text="4,6 km" />
+            android:text="4,6 km"
+            android:visibility="gone" />
         
     </LinearLayout>
     

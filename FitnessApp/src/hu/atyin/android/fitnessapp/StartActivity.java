@@ -131,6 +131,7 @@ public class StartActivity extends Activity {
 	//Újraindítjuk a Start Activity-t, hogy annak a nyelvezete is befrissüljön
 	public void RefreshStartActivity() {
 		this.finish();
-		this.startActivity(getIntent());
+		overridePendingTransition(0, 0);
+		this.startActivity(getIntent().addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION));
 	}
 }

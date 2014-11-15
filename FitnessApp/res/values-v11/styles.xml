@@ -10,6 +10,7 @@
 
         <!-- Support library compatibility -->
         <item name="actionBarStyle">@style/MyActionBar</item>
+        <item name="android:windowAnimationStyle">@style/MyAnimation.Window</item>
     </style>
     
     <!-- Application theme. -->
@@ -20,6 +21,15 @@
     <style name="NoBackground" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="android:windowBackground">@null</item>
     </style>
+    
+    <!-- Animations --> 
+	<style name="MyAnimation" /> 
+	
+	<!-- Animations for a non-full-screen window or activity. --> 
+	<style name="MyAnimation.Window" parent="@android:style/Animation.Dialog"> 
+	    <item name="android:windowEnterAnimation">@anim/abc_fade_in</item>
+	    <item name="android:windowExitAnimation">@anim/abc_fade_out</item>
+	</style> 
     
     <!-- <style name="CustomActionBarTheme"
            parent="@style/AppBaseTheme">

@@ -81,8 +81,6 @@ public class LocationsActivity extends ActionBarActivity {
 	
 	private CustomJsonRequest locationsJsonObjReq;
 	
-    private static final int RESULT_SETTINGS = 1;
-	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

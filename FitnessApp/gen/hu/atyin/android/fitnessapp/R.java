@@ -1088,8 +1088,6 @@ containing a value of this type.
          (such as screen margins) for screens with more than 820dp of available width. This
          would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively).
     
- Default screen margins, per the Android Design guidelines. 
- Default screen margins, per the Android Design guidelines. 
          */
         public static final int activity_horizontal_margin=0x7f080015;
         public static final int activity_vertical_margin=0x7f080016;
@@ -1716,21 +1714,9 @@ containing a value of this type.
         AppBaseTheme from BOTH res/values/styles.xml and
         res/values-v11/styles.xml on API 14+ devices.
     
-
-        Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
-    
-
-        Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
-    
          */
         public static final int AppBaseTheme=0x7f0b008b;
         /**  Application theme. 
- All customizations that are NOT specific to a particular API-level can go here. 
- Application theme. 
- All customizations that are NOT specific to a particular API-level can go here. 
- Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
@@ -1761,34 +1747,26 @@ containing a value of this type.
         <item name="actionBarStyle">@style/MyActionBar</item>
     </style> 
  ActionBar styles 
- <style name="CustomActionBarTheme"
-           parent="@style/AppBaseTheme">
-
-        Support library compatibility
-        <item name="actionBarStyle">@style/MyActionBar</item>
-    </style> 
- ActionBar styles 
- <style name="CustomActionBarTheme"
-           parent="@style/AppBaseTheme">
-
-        Support library compatibility
-        <item name="actionBarStyle">@style/MyActionBar</item>
-    </style> 
- ActionBar styles 
          */
-        public static final int MyActionBar=0x7f0b008e;
+        public static final int MyActionBar=0x7f0b0090;
         /**  ActionBar title text 
  The textColor property is backward compatible with the Support Library 
  ActionBar title text 
  The textColor property is backward compatible with the Support Library 
  ActionBar title text 
  The textColor property is backward compatible with the Support Library 
- ActionBar title text 
- The textColor property is backward compatible with the Support Library 
- ActionBar title text 
- The textColor property is backward compatible with the Support Library 
          */
-        public static final int MyActionBarTitleText=0x7f0b008f;
+        public static final int MyActionBarTitleText=0x7f0b0091;
+        /**  Animations 
+ Animations 
+ Animations 
+         */
+        public static final int MyAnimation=0x7f0b008e;
+        /**  Animations for a non-full-screen window or activity. 
+ Animations for a non-full-screen window or activity. 
+ Animations for a non-full-screen window or activity. 
+         */
+        public static final int MyAnimation_Window=0x7f0b008f;
         public static final int NoBackground=0x7f0b008d;
         /**  Mimic text appearance in select_dialog_item.xml 
          */

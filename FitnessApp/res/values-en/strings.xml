@@ -2,106 +2,106 @@
 <resources>
 
     <string name="app_name">Gilda Max</string>
-    <string name="action_settings">Beállítások</string>
-    <string name="pref_title">Időzítés</string>
-    <string name="pref_summary">Állítsa be, hogy az edzés kezdete előtt hány órával értesítse az alkalmazás</string>
+    <string name="action_settings">Settings</string>
+    <string name="pref_title">Timing</string>
+    <string name="pref_summary">Set how many hours before the start of training you should be notified</string>
     <string name="pref_default">2</string>
-    <string name="app_settings_hourText">óra</string>
+    <string name="app_settings_hourText">hour</string>
     
-    <string name="app_menu_settings">Beállítások</string>
+    <string name="app_menu_settings">Settings</string>
     
-    <string name="app_setting_title">Az Alkalmazás beállításai</string>
-    <string name="app_error_title">Hiba</string>
-    <string name="app_logout_title">Kijelentkezés</string>
-    <string name="app_btnBack_Title">Vissza</string>
-    <string name="app_btnAgain_Title">Újra</string>
-    <string name="app_btnNo_Title">Nem</string>
-    <string name="app_btnYesTitle">Igen</string>
-    <string name="app_btnExit_Title">Kilépés</string>
+    <string name="app_setting_title">The Application settings</string>
+    <string name="app_error_title">Error</string>
+    <string name="app_logout_title">Log out</string>
+    <string name="app_btnBack_Title">Back</string>
+    <string name="app_btnAgain_Title">Again</string>
+    <string name="app_btnNo_Title">No</string>
+    <string name="app_btnYesTitle">Yes</string>
+    <string name="app_btnExit_Title">Quit</string>
     
-    <string name="app_error_no_internet">Nincs internet hozzáférés! Ellenőrizze a Wi-Fi vagy mobilinternet kapcsolatát!</string>
-    <string name="app_error_unexpected">Váratlan hiba történt! Kérjük próbálja újra!</string>
+    <string name="app_error_no_internet">No internet access! Verify your wifi or mobile data connection!</string>
+    <string name="app_error_unexpected">An unexpected error occured! Please try again!</string>
     
-    <string name="app_login_login">Bejelentkezés</string>
-    <string name="app_login_cancalBtnText">Mégse</string>
-    <string name="app_login_emailEdHint">E-mail cím</string>
-    <string name="app_login_passwordEdHint">Jelszó</string>    
-    <string name="app_login_loginBtnText">Belépek</string>    
-    <string name="app_login_registrationLabel">Regisztráció</string>    
-    <string name="app_login_entryBtnText">Belépés</string>
-    <string name="app_login_languagechooserBtnText">Nyelvválasztás</string>
-    <string name="app_login_forgotPasswordBtnTitle">Elfelejtettem a jelszót</string>
-    <string name="app_login_loginInProgressTitle">Bejelentkezés...</string>
+    <string name="app_login_login">Login</string>
+    <string name="app_login_cancalBtnText">Cancel</string>
+    <string name="app_login_emailEdHint">E-mail address</string>
+    <string name="app_login_passwordEdHint">Password</string>    
+    <string name="app_login_loginBtnText">Enter</string>    
+    <string name="app_login_registrationLabel">Registration</string>    
+    <string name="app_login_entryBtnText">Enter</string>
+    <string name="app_login_languagechooserBtnText">Language selection</string>
+    <string name="app_login_forgotPasswordBtnTitle">I forgot my password</string>
+    <string name="app_login_loginInProgressTitle">Login...</string>
     
-    <string name="app_language_title">Válassz egy nyelvet!</string>
-    <string name="app_language_hun">Magyar</string>
-    <string name="app_language_eng">Angol</string>
-    <string name="app_language_deu">Német</string>
+    <string name="app_language_title">Choose Language!</string>
+    <string name="app_language_hun">Hungarian</string>
+    <string name="app_language_eng">English</string>
+    <string name="app_language_deu">German</string>
 
-    <string name="app_registration_lastname">Keresztnév</string>
-    <string name="app_registration_firstname">Vezetéknév</string>
-    <string name="app_registration_passwordagain">Jelszó újra</string>
-    <string name="app_registration_title">Regisztráció</string>
-    <string name="app_registration_firstNameInvalid">Add meg a keresztneved!</string>
-    <string name="app_registration_lastNameInvalid">Add meg a vezetékneved!</string>
-    <string name="app_registration_emailInvalid">Add meg az e-mail címed!</string>
-    <string name="app_registration_PasswordInvalid">Add meg a jelszót!</string>
-    <string name="app_registration_passwordsInvalid">A megadott jelszavak nem egyeznek!</string>
-    <string name="app_registration_regInProgressTitle">Regisztráció...</string>
+    <string name="app_registration_lastname">First name</string>
+    <string name="app_registration_firstname">Surname</string>
+    <string name="app_registration_passwordagain">Password again</string>
+    <string name="app_registration_title">Registration</string>
+    <string name="app_registration_firstNameInvalid">First name</string>
+    <string name="app_registration_lastNameInvalid">Surname</string>
+    <string name="app_registration_emailInvalid">E-mail address</string>
+    <string name="app_registration_PasswordInvalid">Password</string>
+    <string name="app_registration_passwordsInvalid">The passwords do not match!</string>
+    <string name="app_registration_regInProgressTitle">Registration...</string>
     
-    <string name="app_forgot_password_title">Új jelszó igénylése</string>
-    <string name="app_forgot_password_sendBtnText">Küldés</string>
-    <string name="app_forgot_password_oparationFailed">Az új jelszó igénylés sikertelen! Kérjük próbáld újra!</string>
-    <string name="app_forgot_password_text">Add meg az e-mail címed amivel regisztráltál! Ellenőrizd a postafiókod és a kapott új jelszóval lépj be, majd belépés után változtasd meg!</string>
-    <string name="app_forgot_password_sendigTitle">Küldés...</string>
+    <string name="app_forgot_password_title">Request new password</string>
+    <string name="app_forgot_password_sendBtnText">Send</string>
+    <string name="app_forgot_password_oparationFailed">The new password request failed! Please try again!</string>
+    <string name="app_forgot_password_text">Enter your registered e-mail address! Please check your mailbox and log in with the new password, then change it!</string>
+    <string name="app_forgot_password_sendigTitle">Sending...</string>
     
-    <string name="app_change_password_title">Jelszó módosítása</string>
-    <string name="app_change_password_edOldPasswordHint">Régi jelszó</string>
-    <string name="app_change_password_edNewPasswordHint">Új jelszó</string>
-    <string name="app_change_password_edNewPasswordAgainHint">Új jelszó újra</string>
-    <string name="app_change_password_allFieldRequired">Minden mező kitöltése kötelező!</string>
-    <string name="app_change_password_newPasswordsNotEqual">A megadott új jelszavak nem egyeznek!</string>
-    <string name="app_change_password_operationFailed">A jelszó megváltoztatása sikertelen! Kérjük próbáld újra!</string>
+    <string name="app_change_password_title">Change the password</string>
+    <string name="app_change_password_edOldPasswordHint">Old password</string>
+    <string name="app_change_password_edNewPasswordHint">New password</string>
+    <string name="app_change_password_edNewPasswordAgainHint">New password again</string>
+    <string name="app_change_password_allFieldRequired">All fields are required!</string>
+    <string name="app_change_password_newPasswordsNotEqual">The new passwords do not match!</string>
+    <string name="app_change_password_operationFailed">The password change failed! Please try again!</string>
     
-    <string name="app_my_reservations_title">Foglalásaim</string>
-    <string name="app_my_reservations_reservationTimeTitle">Foglalás időpontja:</string>
-    <string name="app_my_reservation_deleteReservationBtnTitle">Lemondás</string>
-    <string name="app_my_reservations_downloadingReservations">Foglalásaim letöltése...</string>
-    <string name="app_my_reservations_noReservations">Még nincs foglalásod!</string>
-    <string name="app_my_reservations_deleteQuestion">Szeretné lemondani a foglalást?</string>
-    <string name="app_my_reservations_deletingReservation">Foglalás törlése...</string>
+    <string name="app_my_reservations_title">My bookings</string>
+    <string name="app_my_reservations_reservationTimeTitle">Time of booking:</string>
+    <string name="app_my_reservation_deleteReservationBtnTitle">Cancellation</string>
+    <string name="app_my_reservations_downloadingReservations">Download bookings...</string>
+    <string name="app_my_reservations_noReservations">There are no bookings yet!</string>
+    <string name="app_my_reservations_deleteQuestion">Do you want to cancel your booking?</string>
+    <string name="app_my_reservations_deletingReservation">Cancel reservation...</string>
     
-    <string name="app_reservation_titleText">Edzők és időpontok</string>
-    <string name="app_reservation_noTrainingInThisRoom">Ebben a teremben sajnos nem lesz edzés a közeljövőben!</string>
-    <string name="app_reservation_loadingTrainingsTitle">Edzések letöltése...</string>
-    <string name="app_reservation_reservationInProgressTitle">Foglalás...</string>
-    <string name="app_reservation_sureToReserveQuestion">Biztos szeretne helyet foglalni erre az eseményre?</string>
-    <string name="app_reservation_rowTitle">Foglalás:</string>
-    <string name="app_reservation_spinner_monday">H</string>
-    <string name="app_reservation_spinner_tuesday">K</string>
-    <string name="app_reservation_spinner_wednesday">Sze</string>
-    <string name="app_reservation_spinner_thursday">Cs</string>
-    <string name="app_reservation_spinner_friday">P</string>
-    <string name="app_reservation_spinner_saturday">Szo</string>
-    <string name="app_reservation_spinner_sunday">V</string>
+    <string name="app_reservation_titleText">Trainers and Times</string>
+    <string name="app_reservation_noTrainingInThisRoom">Unfortunately, there is no training in this room in near future!</string>
+    <string name="app_reservation_loadingTrainingsTitle">Download trainings...</string>
+    <string name="app_reservation_reservationInProgressTitle">Booking...</string>
+    <string name="app_reservation_sureToReserveQuestion">Are you sure you want to book this event?</string>
+    <string name="app_reservation_rowTitle">Booking:</string>
+    <string name="app_reservation_spinner_monday">Mon</string>
+    <string name="app_reservation_spinner_tuesday">Tue</string>
+    <string name="app_reservation_spinner_wednesday">Wed</string>
+    <string name="app_reservation_spinner_thursday">Thur</string>
+    <string name="app_reservation_spinner_friday">Fri</string>
+    <string name="app_reservation_spinner_saturday">Sat</string>
+    <string name="app_reservation_spinner_sunday">Sun</string>
     
-    <string name="app_notification_notiTitle">Önnek edzése lesz!</string>
-    <string name="app_notification_training">Edzés: </string>
-    <string name="app_notification_startText">Kezdete: </string>
+    <string name="app_notification_notiTitle">You have a training!</string>
+    <string name="app_notification_training">Training: </string>
+    <string name="app_notification_startText">Start: </string>
     
-    <string name="app_location_locationtitle">Válassz helyszínt</string>
-    <string name="app_location_quitQuestion">Biztos ki akar jelentkezni?</string>
-    <string name="app_location_positionGetFailed">Pozíció lekérése sikertelen!</string>
+    <string name="app_location_locationtitle">Choose Location</string>
+    <string name="app_location_quitQuestion">Are you sure you want to quit?</string>
+    <string name="app_location_positionGetFailed">Failed to retrieve position!</string>
     <string name="app_location_actionbarTitle">Gilda Max Fitness</string>
-    <string name="app_location_loadingLocationsTitle">Helyszínek letöltése...</string>
-    <string name="app_location_mapLoadingFailed">Sajnos nem sikerült betölteni a térképet!</string>
-    <string name="app_location_findingPosition">Saját pozíció meghatározása...</string>
+    <string name="app_location_loadingLocationsTitle">Download locations...</string>
+    <string name="app_location_mapLoadingFailed">Failed to load the map!</string>
+    <string name="app_location_findingPosition">Determine your own position...</string>
     <string name="app_location_km">km</string>
     
-    <string name="app_room_titleText">Válassz termet</string>
-    <string name="app_room_loadingRoomsTitle">Termek letöltése...</string>
+    <string name="app_room_titleText">Choose room</string>
+    <string name="app_room_loadingRoomsTitle">Download rooms...</string>
     
-    <string name="app_timetable_freeplacesText">"  |  Szabad helyek: "</string>
+    <string name="app_timetable_freeplacesText">"  |  Free places: "</string>
     
     
     

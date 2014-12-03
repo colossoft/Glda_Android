@@ -23,7 +23,7 @@
 	        android:layout_width="match_parent"
 	        android:layout_height="40dp"
 	        android:text="@string/app_language_title"
-	        android:textSize="20sp"
+	        android:textSize="18sp"
 	        android:textColor="#fff"
 	        android:textStyle="italic|bold"
 	        android:gravity="center"

@@ -57,7 +57,7 @@
 		    android:background="@drawable/btn_lang_bgs"
 		    android:text="@string/app_login_languagechooserBtnText"
 		    android:textStyle="italic|bold"
-	        android:textSize="24sp"
+	        android:textSize="18sp"
 		    android:textColor="#cc3433" />
 	    
 	</LinearLayout>
